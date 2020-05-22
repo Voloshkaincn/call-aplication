@@ -1,79 +1,76 @@
 /*===== variables ========*/
 /*===== end variables ========*/
 /*===== normolize ========*/
-html {
+#intouch-web-dialer-app {
+  margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -ms-overflow-style: scrollbar;
 }
 
-body {
-  margin: 0;
-}
-
-*,
-*::before,
-*::after {
+#intouch-web-dialer-app *,
+#intouch-web-dialer-app *::before,
+#intouch-web-dialer-app *::after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
 }
 
-a {
+#intouch-web-dialer-app a {
   background-color: transparent;
   color: unset;
   text-decoration: none;
   cursor: pointer;
 }
 
-img {
+#intouch-web-dialer-app img {
   border: 0;
   height: auto;
   max-width: 100%;
 }
 
-button,
-input,
-optgroup,
-select,
-textarea {
+#intouch-web-dialer-app button,
+#intouch-web-dialer-app input,
+#intouch-web-dialer-app optgroup,
+#intouch-web-dialer-app select,
+#intouch-web-dialer-app textarea {
   color: inherit;
   font: inherit;
   margin: 0;
 }
 
-button {
+#intouch-web-dialer-app button {
   overflow: visible;
   background: transparent;
   border: none;
 }
 
-button {
+#intouch-web-dialer-app button {
   -webkit-appearance: button;
   cursor: pointer;
 }
 
-button[disabled] {
+#intouch-web-dialer-app button[disabled] {
   cursor: default;
 }
 
-::-webkit-scrollbar {
+#intouch-web-dialer-app ::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 3px;
   height: 3px;
 }
 
-::-webkit-scrollbar-track {
+#intouch-web-dialer-app ::-webkit-scrollbar-track {
   background: rgba(120, 122, 148, 0.23);
   -webkit-border-radius: 1px;
           border-radius: 1px;
   width: 3px;
 }
 
-::-webkit-scrollbar-thumb:window-inactive {
+#intouch-web-dialer-app ::-webkit-scrollbar-thumb:window-inactive {
   background: #787A94;
 }
 
-::-webkit-scrollbar-thumb {
+#intouch-web-dialer-app ::-webkit-scrollbar-thumb {
   cursor: pointer;
   -webkit-border-radius: 0;
           border-radius: 0;
@@ -83,29 +80,68 @@ button[disabled] {
   transition: background 0.2s ease;
 }
 
-::-webkit-scrollbar-thumb:hover {
+#intouch-web-dialer-app ::-webkit-scrollbar-thumb:hover {
   background: #787A94;
 }
 
-::-moz-selection {
+#intouch-web-dialer-app ::-moz-selection {
   background: transparent;
 }
 
-::selection {
+#intouch-web-dialer-app ::selection {
   background: transparent;
 }
 
 /*===== end normolize ========*/
+@-webkit-keyframes intouch-web-dialer-app-rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes intouch-web-dialer-app-rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes intouch-web-dialer-app-loader {
+  0% {
+    fill: #ffffff;
+  }
+  20% {
+    fill: #787A94;
+  }
+}
+
+@keyframes intouch-web-dialer-app-loader {
+  0% {
+    fill: #ffffff;
+  }
+  20% {
+    fill: #787A94;
+  }
+}
+
 /*===== components ========*/
-.hidden {
+#intouch-web-dialer-app .hidden {
   visibility: hidden;
 }
 
-.mt-auto {
+#intouch-web-dialer-app .mt-auto {
   margin-top: auto;
 }
 
-.callapp {
+#intouch-web-dialer-app .callapp {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   position: fixed;
@@ -125,7 +161,7 @@ button[disabled] {
   overflow: hidden;
 }
 
-.callapp__wrap {
+#intouch-web-dialer-app .callapp__wrap {
   width: 100%;
   height: 100%;
   padding: 20px 10px;
@@ -142,29 +178,7 @@ button[disabled] {
           align-items: self-start;
 }
 
-@-webkit-keyframes rotate {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-.loader {
+#intouch-web-dialer-app .loader {
   margin: auto;
   text-align: center;
   position: absolute;
@@ -192,22 +206,22 @@ button[disabled] {
   z-index: 12;
 }
 
-.loader__spiner {
+#intouch-web-dialer-app .loader__spiner {
   width: 50px;
   height: 50px;
   margin: 0 auto 10px;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
-  -webkit-animation: rotate 1.5s infinite linear;
-          animation: rotate 1.5s infinite linear;
+  -webkit-animation: intouch-web-dialer-app-rotate 1.5s infinite linear;
+          animation: intouch-web-dialer-app-rotate 1.5s infinite linear;
 }
 
-.loader__spiner .icon {
+#intouch-web-dialer-app .loader__spiner .icon {
   width: 100%;
   height: 100%;
 }
 
-.loader__title {
+#intouch-web-dialer-app .loader__title {
   color: #ffffff;
   font-weight: 600;
   font-size: 14px;
@@ -215,18 +229,18 @@ button[disabled] {
   margin-bottom: 10px;
 }
 
-.loader__text {
+#intouch-web-dialer-app .loader__text {
   color: #787A94;
   font-size: 12px;
   line-height: 18px;
 }
 
-.select {
+#intouch-web-dialer-app .select {
   width: 100%;
   position: relative;
 }
 
-.select__triger {
+#intouch-web-dialer-app .select__triger {
   color: #787A94;
   font-size: 14px;
   line-height: 24px;
@@ -243,19 +257,19 @@ button[disabled] {
   cursor: pointer;
 }
 
-.select__arrow {
+#intouch-web-dialer-app .select__arrow {
   margin-left: auto;
   width: 10px;
   height: 5px;
 }
 
-.select__text {
+#intouch-web-dialer-app .select__text {
   font-size: 14px;
   line-height: 24px;
   color: #CCCEE0;
 }
 
-.select__list {
+#intouch-web-dialer-app .select__list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -272,7 +286,7 @@ button[disabled] {
   left: 0;
 }
 
-.select__option {
+#intouch-web-dialer-app .select__option {
   padding: 13px 5px;
   -webkit-border-radius: 6px;
           border-radius: 6px;
@@ -291,23 +305,23 @@ button[disabled] {
 }
 
 @media (hover) {
-  .select__option:hover {
+  #intouch-web-dialer-app .select__option:hover {
     background: rgba(120, 122, 148, 0.23);
   }
 }
 
-.icon-arrow {
+#intouch-web-dialer-app .icon-arrow {
   stroke: #ffffff;
   fill: transparent;
 }
 
-.option__check:after {
+#intouch-web-dialer-app .option__check:after {
   display: block;
   content: url("data:image/svg+xml,%3Csvg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5L4.66667 9L12 1' stroke='url(%23paint0_linear)' stroke-linecap='round'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='12' y1='9' x2='4.38919' y2='-1.46486' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23CDDC39'/%3E%3Cstop offset='1' stop-color='%234CAF50'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
   margin-left: auto;
 }
 
-.close {
+#intouch-web-dialer-app .close {
   position: absolute;
   top: 10px;
   right: 5px;
@@ -317,27 +331,27 @@ button[disabled] {
   z-index: 5;
 }
 
-.close:focus {
+#intouch-web-dialer-app .close:focus {
   outline: none;
 }
 
-.close:focus .close__icon {
+#intouch-web-dialer-app .close:focus .close__icon {
   stroke: #787A94;
 }
 
 @media (hover) {
-  .close:hover .close__icon {
+  #intouch-web-dialer-app .close:hover .close__icon {
     stroke: #CCCEE0;
   }
 }
 
-.close__icon {
+#intouch-web-dialer-app .close__icon {
   width: 100%;
   height: 100%;
   stroke: #CCCEE0;
 }
 
-.phones__list {
+#intouch-web-dialer-app .phones__list {
   height: 335px;
   overflow: auto;
   position: absolute;
@@ -351,7 +365,7 @@ button[disabled] {
   margin: 0 -5px;
 }
 
-.pad {
+#intouch-web-dialer-app .pad {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -362,7 +376,7 @@ button[disabled] {
           align-items: flex-start;
 }
 
-.pad__input {
+#intouch-web-dialer-app .pad__input {
   width: 100%;
   color: #787a94;
   text-align: center;
@@ -383,7 +397,7 @@ button[disabled] {
   position: relative;
 }
 
-.pad__number {
+#intouch-web-dialer-app .pad__number {
   font-size: 18px;
   line-height: 18px;
   color: #ffffff;
@@ -392,7 +406,7 @@ button[disabled] {
   transition: all 0.3s;
 }
 
-.pad__letter {
+#intouch-web-dialer-app .pad__letter {
   font-size: 10px;
   line-height: 15px;
   color: #787A94;
@@ -401,23 +415,23 @@ button[disabled] {
   transition: all 0.3s;
 }
 
-.pad__item:focus {
+#intouch-web-dialer-app .pad__item:focus {
   outline: none;
 }
 
-.pad__item:focus .pad__number,
-.pad__item:focus .pad__letter {
+#intouch-web-dialer-app .pad__item:focus .pad__number,
+#intouch-web-dialer-app .pad__item:focus .pad__letter {
   color: #CCCEE0;
 }
 
 @media (hover) {
-  .pad__item:hover .pad__number,
-  .pad__item:hover .pad__letter {
+  #intouch-web-dialer-app .pad__item:hover .pad__number,
+  #intouch-web-dialer-app .pad__item:hover .pad__letter {
     color: #CCCEE0;
   }
 }
 
-.input {
+#intouch-web-dialer-app .input {
   background: transparent;
   color: #ffffff;
   border: none;
@@ -426,11 +440,11 @@ button[disabled] {
   width: 100%;
 }
 
-.input:focus {
+#intouch-web-dialer-app .input:focus {
   outline: none;
 }
 
-.input__wrap {
+#intouch-web-dialer-app .input__wrap {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -443,12 +457,12 @@ button[disabled] {
 }
 
 @media (hover) {
-  .input__wrap:hover:after {
+  #intouch-web-dialer-app .input__wrap:hover:after {
     background: #787A94;
   }
 }
 
-.input__wrap:after {
+#intouch-web-dialer-app .input__wrap:after {
   content: '';
   position: absolute;
   top: 0;
@@ -465,7 +479,7 @@ button[disabled] {
   transition: all 0.3;
 }
 
-.input__backspace {
+#intouch-web-dialer-app .input__backspace {
   width: 22px;
   height: 18px;
   fill: #787A94;
@@ -475,23 +489,23 @@ button[disabled] {
   transition: all 0.3s;
 }
 
-.input__backspace:focus {
+#intouch-web-dialer-app .input__backspace:focus {
   outline: none;
   fill: #CCCEE0;
 }
 
 @media (hover) {
-  .input__backspace:hover {
+  #intouch-web-dialer-app .input__backspace:hover {
     fill: #CCCEE0;
   }
 }
 
-.input__backspace .icon {
+#intouch-web-dialer-app .input__backspace .icon {
   width: 100%;
   height: 100%;
 }
 
-.callbtn {
+#intouch-web-dialer-app .callbtn {
   width: 50px;
   height: 50px;
   -webkit-border-radius: 50%;
@@ -514,7 +528,7 @@ button[disabled] {
   overflow: hidden;
 }
 
-.callbtn:after {
+#intouch-web-dialer-app .callbtn:after {
   content: '';
   width: 100%;
   height: 100%;
@@ -530,25 +544,25 @@ button[disabled] {
   transition: all 0.5s;
 }
 
-.callbtn:focus {
+#intouch-web-dialer-app .callbtn:focus {
   outline: none;
 }
 
-.callbtn:focus:after {
+#intouch-web-dialer-app .callbtn:focus:after {
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
 @media (hover) {
-  .callbtn:hover:after {
+  #intouch-web-dialer-app .callbtn:hover:after {
     -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
   }
 }
 
-.callbtn__wrap {
+#intouch-web-dialer-app .callbtn__wrap {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -560,7 +574,7 @@ button[disabled] {
           justify-content: center;
 }
 
-.callbtn__icon {
+#intouch-web-dialer-app .callbtn__icon {
   fill: #ffffff;
   width: 24px;
   height: 24px;
@@ -569,31 +583,31 @@ button[disabled] {
   transition: all 0.3s;
 }
 
-.callbtn__up:after {
+#intouch-web-dialer-app .callbtn__up:after {
   background: -webkit-linear-gradient(135deg, #CDDC39 0%, #4CAF50 100%);
   background: -o-linear-gradient(135deg, #CDDC39 0%, #4CAF50 100%);
   background: linear-gradient(315deg, #CDDC39 0%, #4CAF50 100%);
 }
 
-.callbtn__down:after {
+#intouch-web-dialer-app .callbtn__down:after {
   background: -webkit-linear-gradient(135deg, #FF9800 0%, #D81B60 100%);
   background: -o-linear-gradient(135deg, #FF9800 0%, #D81B60 100%);
   background: linear-gradient(315deg, #FF9800 0%, #D81B60 100%);
 }
 
-.callbtn__down .callbtn__icon {
+#intouch-web-dialer-app .callbtn__down .callbtn__icon {
   -webkit-transform: rotate(135deg);
       -ms-transform: rotate(135deg);
           transform: rotate(135deg);
 }
 
-.callbtn__wait:after {
+#intouch-web-dialer-app .callbtn__wait:after {
   background: -webkit-linear-gradient(135deg, #FDD835 0%, #FF9800 100%);
   background: -o-linear-gradient(135deg, #FDD835 0%, #FF9800 100%);
   background: linear-gradient(315deg, #FDD835 0%, #FF9800 100%);
 }
 
-.footer {
+#intouch-web-dialer-app .footer {
   position: absolute;
   bottom: 15px;
   padding: 0 10px;
@@ -613,7 +627,7 @@ button[disabled] {
   z-index: 9;
 }
 
-.status {
+#intouch-web-dialer-app .status {
   font-size: 8px;
   line-height: 15px;
   color: #CCCEE0;
@@ -626,51 +640,51 @@ button[disabled] {
 }
 
 @media (hover) {
-  .status:hover {
+  #intouch-web-dialer-app .status:hover {
     color: #ffffff;
   }
 }
 
-.status__open {
+#intouch-web-dialer-app .status__open {
   background: #787A94;
   color: #CCCEE0;
   padding: 7px 0 5px 7px;
 }
 
-.status__open .status__name {
+#intouch-web-dialer-app .status__open .status__name {
   font-size: 10px;
   color: #ffffff;
   cursor: default;
 }
 
-.status__open .status__name .status__point,
-.status__open .status__name .status__icon {
+#intouch-web-dialer-app .status__open .status__name .status__point,
+#intouch-web-dialer-app .status__open .status__name .status__icon {
   display: none;
 }
 
-.status__name {
+#intouch-web-dialer-app .status__name {
   cursor: pointer;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.status__item {
+#intouch-web-dialer-app .status__item {
   margin: 4px 0;
   cursor: pointer;
 }
 
-.status__item_active {
+#intouch-web-dialer-app .status__item_active {
   color: #ffffff;
 }
 
-.status__icon {
+#intouch-web-dialer-app .status__icon {
   width: 6px;
   height: 3px;
   margin-left: 3px;
 }
 
-.status__point {
+#intouch-web-dialer-app .status__point {
   width: 3px;
   height: 3px;
   -webkit-border-radius: 50%;
@@ -680,27 +694,27 @@ button[disabled] {
   vertical-align: middle;
 }
 
-.status__point_on {
+#intouch-web-dialer-app .status__point_on {
   background: -webkit-linear-gradient(135deg, #CDDC39 0%, #4CAF50 100%);
   background: -o-linear-gradient(135deg, #CDDC39 0%, #4CAF50 100%);
   background: linear-gradient(315deg, #CDDC39 0%, #4CAF50 100%);
 }
 
-.status__point_off {
+#intouch-web-dialer-app .status__point_off {
   background: -webkit-linear-gradient(135deg, #FF9800 0%, #D81B60 100%);
   background: -o-linear-gradient(135deg, #FF9800 0%, #D81B60 100%);
   background: linear-gradient(315deg, #FF9800 0%, #D81B60 100%);
 }
 
-.status__point_else {
+#intouch-web-dialer-app .status__point_else {
   background: #CCCEE0;
 }
 
-.status__list {
+#intouch-web-dialer-app .status__list {
   display: none;
 }
 
-.copyright {
+#intouch-web-dialer-app .copyright {
   color: #787A94;
   font-size: 8px;
   line-height: 15px;
@@ -710,12 +724,12 @@ button[disabled] {
 }
 
 @media (hover) {
-  .copyright:hover {
+  #intouch-web-dialer-app .copyright:hover {
     color: #CCCEE0;
   }
 }
 
-.activecall {
+#intouch-web-dialer-app .activecall {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -746,14 +760,14 @@ button[disabled] {
   padding: 0 10px;
 }
 
-.activecall__descr {
+#intouch-web-dialer-app .activecall__descr {
   color: #787A94;
   font-size: 12px;
   line-height: 18px;
   margin-bottom: 8px;
 }
 
-.activecall__number {
+#intouch-web-dialer-app .activecall__number {
   width: 100%;
   text-align: center;
   font-size: 18px;
@@ -761,13 +775,13 @@ button[disabled] {
   color: #ffffff;
 }
 
-.activecall__loader {
+#intouch-web-dialer-app .activecall__loader {
   width: 32px;
   height: 15px;
   margin-bottom: 7px;
 }
 
-.activecall__buttons {
+#intouch-web-dialer-app .activecall__buttons {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -778,7 +792,7 @@ button[disabled] {
           justify-content: center;
 }
 
-.activecall__time {
+#intouch-web-dialer-app .activecall__time {
   font-size: 12px;
   line-height: 18px;
   color: #CCCEE0;
@@ -786,51 +800,33 @@ button[disabled] {
   margin-bottom: 35px;
 }
 
-@-webkit-keyframes loader {
-  0% {
-    fill: #ffffff;
-  }
-  20% {
-    fill: #787A94;
-  }
-}
-
-@keyframes loader {
-  0% {
-    fill: #ffffff;
-  }
-  20% {
-    fill: #787A94;
-  }
-}
-
-.icon-call-loader {
+#intouch-web-dialer-app .icon-call-loader {
   width: 100%;
   height: 100%;
   fill: #787A94;
 }
 
-.call-loader__path {
-  -webkit-animation: loader 2.5s infinite linear;
-          animation: loader 2.5s infinite linear;
+#intouch-web-dialer-app .call-loader__path {
+  -webkit-animation: intouch-web-dialer-app-loader 2.5s infinite linear;
+          animation: intouch-web-dialer-app-loader 2.5s infinite linear;
 }
 
-.call-loader__path:first-child {
+#intouch-web-dialer-app .call-loader__path:first-child {
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
 }
 
-.call-loader__path:nth-child(2) {
+#intouch-web-dialer-app .call-loader__path:nth-child(2) {
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
 }
 
-.call-loader__path:nth-child(3) {
+#intouch-web-dialer-app .call-loader__path:nth-child(3) {
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
 }
 
-.activenumber {
+#intouch-web-dialer-app .activenumber {
   position: absolute;
   top: 18px;
   left: 0;
@@ -850,22 +846,22 @@ button[disabled] {
           align-items: center;
 }
 
-.activenumber__text {
+#intouch-web-dialer-app .activenumber__text {
   color: #787A94;
 }
 
-.note {
+#intouch-web-dialer-app .note {
   font-weight: 600;
   font-size: 10px;
   line-height: 15px;
   color: #787A94;
 }
 
-.iti__flag {
+#intouch-web-dialer-app .iti__flag {
   border-right: 2px;
 }
 
-.options {
+#intouch-web-dialer-app .options {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -878,43 +874,43 @@ button[disabled] {
   margin-top: 10px;
 }
 
-.options__item {
+#intouch-web-dialer-app .options__item {
   width: 50px;
   text-align: center;
   margin: 0 10px;
   padding: 0;
 }
 
-.options__item:focus {
+#intouch-web-dialer-app .options__item:focus {
   outline: none;
 }
 
-.options__item:focus .options__icon {
+#intouch-web-dialer-app .options__item:focus .options__icon {
   fill: #CCCEE0;
 }
 
-.options__item:focus .options__text {
+#intouch-web-dialer-app .options__item:focus .options__text {
   color: #CCCEE0;
 }
 
 @media (hover) {
-  .options__item:hover .options__icon {
+  #intouch-web-dialer-app .options__item:hover .options__icon {
     fill: #CCCEE0;
   }
-  .options__item:hover .options__text {
+  #intouch-web-dialer-app .options__item:hover .options__text {
     color: #CCCEE0;
   }
 }
 
-.options__item_disable .options__icon {
+#intouch-web-dialer-app .options__item_disable .options__icon {
   fill: #787A94;
 }
 
-.options_incall {
+#intouch-web-dialer-app .options_incall {
   margin-bottom: 25px;
 }
 
-.options__icon {
+#intouch-web-dialer-app .options__icon {
   width: 24px;
   height: 24px;
   fill: #ffffff;
@@ -924,18 +920,18 @@ button[disabled] {
   transition: all 0.3s;
 }
 
-.options__icon .icon {
+#intouch-web-dialer-app .options__icon .icon {
   width: 100%;
   height: 100%;
 }
 
-.options__text {
+#intouch-web-dialer-app .options__text {
   font-size: 10px;
   line-height: 15px;
   color: #787A94;
 }
 
-.notification {
+#intouch-web-dialer-app .notification {
   position: absolute;
   top: 5px;
   left: 5px;
@@ -945,25 +941,25 @@ button[disabled] {
   padding: 5px 30px 5px 10px;
 }
 
-.notification__error {
+#intouch-web-dialer-app .notification__error {
   background: #D81B60;
   -webkit-border-radius: 5px;
           border-radius: 5px;
   color: #ffffff;
 }
 
-.notification__title {
+#intouch-web-dialer-app .notification__title {
   font-size: 10px;
   line-height: 15px;
 }
 
-.notification__text {
+#intouch-web-dialer-app .notification__text {
   font-size: 8px;
   line-height: 15px;
   opacity: 0.7;
 }
 
-.notification__close {
+#intouch-web-dialer-app .notification__close {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -973,16 +969,16 @@ button[disabled] {
   z-index: 5;
 }
 
-.notification__close:focus {
+#intouch-web-dialer-app .notification__close:focus {
   outline: none;
 }
 
-.notification__close:focus .close__icon {
+#intouch-web-dialer-app .notification__close:focus .close__icon {
   stroke: #ffffff;
 }
 
 @media (hover) {
-  .notification__close:hover .close__icon {
+  #intouch-web-dialer-app .notification__close:hover .close__icon {
     stroke: #CCCEE0;
   }
 }
