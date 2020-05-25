@@ -3,75 +3,75 @@ $(document).ready(function() {
 
 /* ===== hide loader ====*/
 
-	setTimeout(function(){$('.loader').hide();}, 1500);
+	setTimeout(function(){$('.iwda-loader').hide();}, 1500);
 
 	$('#intouch-web-dialer-app button').on('click', function(){$(this).blur()});// delete focus
 
-	$('#intouch-web-dialer-app .select__triger').on('click', function(){
-		$(this).parents('.select').find('.select__list').slideToggle();
-		$('#intouch-web-dialer-app .select__option').on('click', function(){
+	$('#intouch-web-dialer-app .iwda-select__triger').on('click', function(){
+		$(this).parents('.iwda-select').find('.iwda-select__list').slideToggle();
+		$('#intouch-web-dialer-app .iwda-select__option').on('click', function(){
 			var value = $(this).html();
-			$('#intouch-web-dialer-app .select__value').html(value);
-			$(this).parents('.select').find('.select__list').slideUp();
+			$('#intouch-web-dialer-app .iwda-select__value').html(value);
+			$(this).parents('.iwda-select').find('.iwda-select__list').slideUp();
 		})
 	});
 
 
-	$('.status__name').on('click', function(){
-		$('.status').addClass('status__open');
-		$('.status__list').slideDown();
-		$('.status__item').on('click', function(){
-			$('.status__item').removeClass('status__item_active');
-			$(this).addClass('status__item_active');
-			$('.status').removeClass('status__open');
-			$('.status__list').slideUp();
+	$('.iwda-status__name').on('click', function(){
+		$('.iwda-status').addClass('iwda-status__open');
+		$('.iwda-status__list').slideDown();
+		$('.iwda-status__item').on('click', function(){
+			$('.iwda-status__item').removeClass('iwda-status__item_active');
+			$(this).addClass('iwda-status__item_active');
+			$('.iwda-status').removeClass('iwda-status__open');
+			$('.iwda-status__list').slideUp();
 		})
 	});
 
 
-	$('.callapp__wrap .callbtn__up').on('click', function(){
-		$('.callapp__wrap').hide();
-		$('.activecall').show()
+	$('.iwda-callapp__wrap .iwda-callbtn__up').on('click', function(){
+		$('.iwda-callapp__wrap').hide();
+		$('.iwda-activecall').show()
 	});
-	$('.callbtn__down').on('click', function(){
-		$('.callapp__wrap').show();
-		$('.activecall').hide()
+	$('.iwda-callbtn__down').on('click', function(){
+		$('.iwda-callapp__wrap').show();
+		$('.iwda-activecall').hide()
 	});
 	$('#incomingCall').on('click', function(){
-		$('.callapp__wrap').hide();
-		$('.activecall').show();
-		$('.activenumber').show();
-		$('.activecall__descr').text('Incoming Call...');	
-		$('.callbtn__up').show();
-		$('.callbtn__wait').show();
+		$('.iwda-callapp__wrap').hide();
+		$('.iwda-activecall').show();
+		$('.iwda-activenumber').show();
+		$('.iwda-activecall__descr').text('Incoming Call...');	
+		$('.iwda-callbtn__up').show();
+		$('.iwda-callbtn__wait').show();
 
 
 	});
-	$('.activecall .callbtn__up').on('click', function(){
-		$('.activecall__loader').addClass('hidden');
-		$('.callbtn__up').hide();
-		$('.callbtn__wait').hide();
-		$('.options').show();
-		$('.activecall__time').show();
-		$('.activecall__descr').text('In a Call With');	
+	$('.iwda-activecall .iwda-callbtn__up').on('click', function(){
+		$('.iwda-activecall__loader').addClass('iwda-hidden');
+		$('.iwda-callbtn__up').hide();
+		$('.iwda-callbtn__wait').hide();
+		$('.iwda-options').show();
+		$('.iwda-activecall__time').show();
+		$('.iwda-activecall__descr').text('In a Call With');	
 	});
 
-	$('.options__pad').on('click', function(){
-		$('.activenumber').toggle();
-		$('.activecall .pad').toggle();
-		$('.options.options_incall').toggleClass('options_incall');
-		$('.activecall__time').toggle();
-		$('.activecall__number').toggle();
-		$('.activecall__descr').toggle();
-		$('.pad__input').toggle();
+	$('.iwda-options__pad').on('click', function(){
+		$('.iwda-activenumber').toggle();
+		$('.iwda-activecall .iwda-pad').toggle();
+		$('.iwda-options.options_incall').toggleClass('iwda-options_incall');
+		$('.iwda-activecall__time').toggle();
+		$('.iwda-activecall__number').toggle();
+		$('.iwda-activecall__descr').toggle();
+		$('.iwda-pad__input').toggle();
 	});
 
-	$('.pad__item').on('click', function(){
-		$('.pad__input').html($('.additional_element_input').html());
+	$('.iwda-pad__item').on('click', function(){
+		$('.iwda-pad__input').html($('.additional_element_input').html());
 	});
 
 	$('#Error').on('click', function(){
-		$('.notification').show();
+		$('.iwda-notification').show();
 	});
 
 	
