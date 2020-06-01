@@ -17,69 +17,67 @@ $color-dark: linear-gradient(180deg, #2B2C48 0%, #3B3F61 100%);;
         box-sizing: border-box; 
       -ms-overflow-style: scrollbar;
     }
-#intouch-web-dialer-app{
-    *,
-    *::before,
-    *::after {
-      box-sizing: inherit;
-    }
-    a {
-        background-color: transparent;
-        color: unset;
-        text-decoration: none;
-        cursor: pointer
-    }
-    img {
-        border: 0;
-        height: auto;
-        max-width: 100%;
-    }
-    button,
-    input,
-    optgroup,
-    select,
-    textarea {
-        color: inherit;
-        font: inherit;
-        margin: 0;
-    }
-    button {
-        overflow: visible;
-        background: transparent;
-        border: none;
-    }
-    button {
-        -webkit-appearance: button;
-        cursor: pointer;
-    }
-    button[disabled] {
-        cursor: default;
-    }
-    ::-webkit-scrollbar {
-      -webkit-appearance: none;
-        width: 3px;
-        height: 3px;
-    }
-    ::-webkit-scrollbar-track {
-        background: rgba(120,122,148,.23);
-        border-radius: 1px;
-        width: 3px;
-    }
-    ::-webkit-scrollbar-thumb:window-inactive {
-        background: $text-color3;
-    }
-    ::-webkit-scrollbar-thumb {
-        cursor: pointer;
-        border-radius: 0;
-        background: $text-color3;
-        transition: background 0.2s ease;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-        background: $text-color3;
-    }
-    ::selection {
-        background: transparent;
-    }
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+a {
+    background-color: transparent;
+    color: unset;
+    text-decoration: none;
+    cursor: pointer
+}
+img {
+    border: 0;
+    height: auto;
+    max-width: 100%;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+button {
+    overflow: visible;
+    background: transparent;
+    border: none;
+}
+button {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+button[disabled] {
+    cursor: default;
+}
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 3px;
+    height: 3px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(120,122,148,.23);
+    border-radius: 1px;
+    width: 3px;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: $text-color3;
+}
+::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    border-radius: 0;
+    background: $text-color3;
+    transition: background 0.2s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: $text-color3;
+}
+::selection {
+    background: transparent;
 }
 /*===== end normolize ========*/
 
@@ -101,585 +99,666 @@ $color-dark: linear-gradient(180deg, #2B2C48 0%, #3B3F61 100%);;
 }
 
 /*===== components ========*/
-#intouch-web-dialer-app{
-    .iwda-hidden{
-        visibility: hidden;
+.iwda-hidden{
+    visibility: hidden;
+}
+.iwda-mt-auto{
+    margin-top: auto;
+}
+.iwda-mx-auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+.iwda-header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 2px 5px 2px 10px;
+    background: rgba(204, 206, 224, 0.1);
+}
+.iwda-callapp{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(180deg, #2B2C48 0%, #3B3F61 100%);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 240px;
+    height: 408px;
+    color: $text-color;
+    overflow: hidden;
+    &__wrap{
+        width: 100%;
+        height: calc(100% - 56px); 
+        padding: 0px 10px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: self-start;
     }
-    .iwda-mt-auto{
-        margin-top: auto;
-    }
-    .iwda-callapp{
-        font-family: 'Open Sans', sans-serif;
-        font-size: 14px;
-    	position: fixed;
-    	bottom: 30px;
-    	right: 30px;
-    	background: linear-gradient(180deg, #2B2C48 0%, #3B3F61 100%);
-    	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-    	border-radius: 10px;
-        width: 240px;
-        height: 408px;
-        color: $text-color;
-        overflow: hidden;
-        &__wrap{
-            width: 100%;
-            height: 100%;
-            padding: 20px 10px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: self-start;
+    &__btn{
+        width: 80px;
+        height: 64px;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        margin: 0;
+        .iwda-callbtn{
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
         }
-        &__btn{
-            width: 80px;
-            height: 64px;
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            margin: 0;
-            .iwda-callbtn{
-                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.iwda-loader{
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    top: 32px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 32px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(180deg, #2B2C48 0%, #3B3F61 100%);
+    z-index: 12;
+    &__spiner{
+        width: 50px;
+        height: 50px;
+        margin: 0 auto 10px;
+        transform: translateZ(0);
+        animation: intouch-web-dialer-app-rotate 1.5s infinite linear;
+        .iwda-icon{
+                width: 100%;
+                height: 100%;
+        }
+    }
+    &__title{
+        color: $text-color;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+        margin-bottom: 10px;
+    }
+    &__text{
+        color: $text-color3;
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+.iwda-ready{
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    top: 32px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 32px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(180deg, #2B2C48 0%, #3B3F61 100%);
+    z-index: 11;
+    &__title{
+        color: $text-color;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+        margin-bottom: 10px;
+    }
+}
+.iwda-select{
+    width: 100%;
+    position: relative;
+    &__triger{
+        color: $text-color3;
+        font-size: 14px;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+        padding: 10px 0px 5px;
+        margin-top: 5px;
+        cursor: pointer;
+    }
+    &__arrow{
+        margin-left: auto;
+        width: 10px;
+        height: 5px;
+    }
+    &__text{
+        font-size: 14px;
+        line-height: 24px;
+        color: $text-color2;
+    }
+    &__list{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        height: 100%;
+        border-top: 1px solid rgba(120, 122, 148, 0.5);
+        position: absolute;
+        z-index: 1;
+        background: linear-gradient(180deg,#2b2c48,#3b3f61);
+        width: 100%;
+        top: 100%;
+        left: 0;
+    }
+    &__option{
+        padding: 13px 5px;
+        border-radius: 6px;
+        transition: all 0.3s;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        @media(hover){
+            &:hover{
+                background: rgba(120, 122, 148, 0.23);
             }
         }
     }
-    
-    .iwda-loader{
-        margin: auto;
-        text-align: center;
-        position: absolute;
-        top: 0;
-        left: 0;
+}
+.icon-iwda-arrow{
+    stroke: $text-color;
+    fill: transparent;
+}
+.iwda-option{
+    &__check{
+        &:after{
+            display: block;
+            content: url("data:image/svg+xml,%3Csvg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5L4.66667 9L12 1' stroke='url(%23paint0_linear)' stroke-linecap='round'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='12' y1='9' x2='4.38919' y2='-1.46486' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23CDDC39'/%3E%3Cstop offset='1' stop-color='%234CAF50'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
+            margin-left: auto;
+        }
+    }
+}
+.iwda-close{
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    z-index: 5;
+    &:focus{
+        outline: none;
+        .close__icon{
+            stroke: $text-color3;
+        }
+    }
+    @media(hover){
+        &:hover{
+            .close__icon{
+                stroke: $text-color2;
+            }   
+        }   
+    }
+    &__icon{
         width: 100%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background: linear-gradient(180deg, #2B2C48 0%, #3B3F61 100%);
-        z-index: 12;
-        &__spiner{
-            width: 50px;
-            height: 50px;
-            margin: 0 auto 10px;
-            transform: translateZ(0);
-            animation: intouch-web-dialer-app-rotate 1.5s infinite linear;
-            .iwda-icon{
-                 width: 100%;
-                 height: 100%;
-            }
-        }
-        &__title{
-            color: $text-color;
-            font-weight: 600;
-            font-size: 14px;
-            line-height: 21px;
-            margin-bottom: 10px;
-        }
-        &__text{
-            color: $text-color3;
-            font-size: 12px;
-            line-height: 18px;
-        }
+        stroke: $text-color2;
     }
-    .iwda-select{
-        width: 100%;
-        position: relative;
-        &__triger{
-            color: $text-color3;
-            font-size: 14px;
-            line-height: 24px;
-            display: flex;
-            align-items: center;
-            padding: 10px 0px 5px;
-            margin-top: 5px;
-            cursor: pointer;
-        }
-        &__arrow{
-            margin-left: auto;
-            width: 10px;
-            height: 5px;
-        }
-        &__text{
-            font-size: 14px;
-            line-height: 24px;
-            color: $text-color2;
-        }
-        &__list{
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            height: 100%;
-            border-top: 1px solid rgba(120, 122, 148, 0.5);
-            position: absolute;
-            z-index: 1;
-            background: linear-gradient(180deg,#2b2c48,#3b3f61);
-            width: 100%;
-            top: 100%;
-            left: 0;
-        }
-        &__option{
-            padding: 13px 5px;
-            border-radius: 6px;
-            transition: all 0.3s;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            @media(hover){
-                &:hover{
-                    background: rgba(120, 122, 148, 0.23);
-                }
-            }
-        }
-    }
-    .icon-iwda-arrow{
-        stroke: $text-color;
-        fill: transparent;
-    }
-    .iwda-option{
-        &__check{
-            &:after{
-                display: block;
-                content: url("data:image/svg+xml,%3Csvg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5L4.66667 9L12 1' stroke='url(%23paint0_linear)' stroke-linecap='round'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='12' y1='9' x2='4.38919' y2='-1.46486' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23CDDC39'/%3E%3Cstop offset='1' stop-color='%234CAF50'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
-                margin-left: auto;
-            }
-        }
-    }
-    .iwda-close{
+}
+.iwda-phones{
+    &__list{
+        height: 335px;
+        overflow: auto;
         position: absolute;
-        top: 10px;
-        right: 5px;
-        width: 24px;
-        height: 24px;
-        padding: 5px;
-        z-index: 5;
+        z-index: 10;
+        background: $bg;
+        width: calc(100% + 10px);
+        margin: 0 -5px;
+    }
+}
+.iwda-pad{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px 25px;
+    align-items: flex-start;
+    &__input{
+        width: 100%;
+        color: #787a94;
+        text-align: center;
+        height: 50px;
+        min-height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    &__number{
+        font-size: 18px;
+        line-height: 18px;
+        color: $text-color;
+        transition: all 0.3s;
+    }
+    &__letter{
+        font-size: 10px;
+        line-height: 15px;
+        color: $text-color3;
+        transition: all 0.3s;
+    }
+    &__item{
         &:focus{
             outline: none;
-            .close__icon{
-                stroke: $text-color3;
+            .iwda-pad__number,
+            .iwda-pad__letter{
+                color: $text-color2;
             }
+
         }
         @media(hover){
             &:hover{
-                .close__icon{
-                    stroke: $text-color2;
-                }   
-            }   
-        }
-        &__icon{
-            width: 100%;
-            height: 100%;
-            stroke: $text-color2;
-        }
-    }
-    .iwda-phones{
-        &__list{
-            height: 335px;
-            overflow: auto;
-            position: absolute;
-            z-index: 10;
-            background: $bg;
-            width: calc(100% + 10px);
-            margin: 0 -5px;
-        }
-    }
-    .iwda-pad{
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 15px 25px;
-        align-items: flex-start;
-        &__input{
-            width: 100%;
-            color: #787a94;
-            text-align: center;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 25px;
-            position: relative;
-        }
-        &__number{
-            font-size: 18px;
-            line-height: 18px;
-            color: $text-color;
-            transition: all 0.3s;
-        }
-        &__letter{
-            font-size: 10px;
-            line-height: 15px;
-            color: $text-color3;
-            transition: all 0.3s;
-        }
-        &__item{
-            &:focus{
-                outline: none;
                 .iwda-pad__number,
                 .iwda-pad__letter{
                     color: $text-color2;
                 }
-
-            }
-            @media(hover){
-                &:hover{
-                    .iwda-pad__number,
-                    .iwda-pad__letter{
-                        color: $text-color2;
-                    }
-                }   
-            }
-        }
-    }
-    .iwda-input{
-        background: transparent;
-        color: $text-color;
-        border: none;
-        font-size: 18px;
-        line-height: 18px;
-        width: 100%;
-        &:focus{
-            outline: none;
-        }
-        &__wrap{
-            width: 100%;
-            display: flex;
-            align-items: center;
-            @media(hover){
-                &:hover:after{
-                    background: $text-color3;
-                }
-            }
-            &:after{
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -5px;
-                width: calc(100% + 10px);
-                height: 100%;
-                background: transparent;
-                border-radius: 6px;
-                opacity: 0.1;
-                transition: all 0.3;
-
-            }
-        }
-        &__backspace{
-            width: 22px;
-            height: 18px;
-            fill: $text-color3;
-            padding: 0;
-            transition: all 0.3s;
-            &:focus{
-                outline: none;
-                fill: $text-color2;
-            }
-            @media(hover){
-                &:hover{
-                    fill: $text-color2;
-                }
-            }
-            .iwda-icon{
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
-    .iwda-callbtn{
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        margin: 15px 7px;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-        &:after{
-            content: '';
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            
-            z-index: -1;
-            transform: rotate(0deg);
-            transition: all 0.5s;
-        }
-        &:focus{
-            outline: none;
-            &:after{
-                transform: rotate(45deg);
-            }
-        }
-        @media(hover){
-            &:hover{
-                &:after{
-                    transform: rotate(45deg);
-                }
             }   
         }
-        &__wrap{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-        &__icon{
-            fill: $text-color;
-            width: 24px;
-            height: 24px;
-            transition: all 0.3s;
-        }
-        &__up:after{
-            background: $color-up;
-        }
-        &__down{
-            &:after{
-                background: $color-down;
-            }
-            .iwda-callbtn__icon{
-                transform: rotate(135deg);
-            }
-
-        }
-        &__wait:after{
-            background: $color-wait;
-        }
-        &__danger{
-            &:after{
-                background: $color-down;
-            }
-        }
-        &__noactive{
-            &:after{
+    }
+}
+.iwda-input{
+    background: transparent;
+    color: $text-color;
+    border: none;
+    font-size: 18px;
+    line-height: 18px;
+    width: 100%;
+    &:focus{
+        outline: none;
+    }
+    &__wrap{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        @media(hover){
+            &:hover:after{
                 background: $text-color3;
             }
         }
-        &__disable{
-            &:after{
-                background: #2F2B44;  
-            }
-            .iwda-callbtn__icon{
-                fill: $text-color3;
-            }
-        }
-        &__out{
-            &:after{
-                background: $color-dark;
-            }
-            &:before{
-                content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8' fill='none'%3E%3Ccircle cx='1.5' cy='1.5' r='1.5' fill='url(%23paint0_linear)'/%3E%3Ccircle cx='6.5' cy='6.5' r='1.5' fill='url(%23paint1_linear)'/%3E%3Ccircle cx='6.5' cy='1.5' r='1.5' fill='url(%23paint2_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='3' y1='3' x2='0' y2='0' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FF9800'/%3E%3Cstop offset='1' stop-color='%23D81B60'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear' x1='8' y1='8' x2='5' y2='5' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FF9800'/%3E%3Cstop offset='1' stop-color='%23D81B60'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint2_linear' x1='8' y1='3' x2='5' y2='0' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FF9800'/%3E%3Cstop offset='1' stop-color='%23D81B60'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
-                display: block;
-                position: absolute;
-                top: 9px;
-                right: 16px;
-            }
-        }
-        &__in{
-            &:after{
-                background: $color-dark;
-            }
-            &:before{
-                content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8' fill='none'%3E%3Ccircle cx='1.5' cy='1.5' r='1.5' fill='url(%23paint0_linear)'/%3E%3Ccircle cx='6.5' cy='6.5' r='1.5' fill='url(%23paint1_linear)'/%3E%3Ccircle cx='6.5' cy='1.5' r='1.5' fill='url(%23paint2_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='3' y1='3' x2='0' y2='0' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23CDDC39'/%3E%3Cstop offset='1' stop-color='%234CAF50'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear' x1='8' y1='8' x2='5' y2='5' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23CDDC39'/%3E%3Cstop offset='1' stop-color='%234CAF50'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint2_linear' x1='8' y1='3' x2='5' y2='0' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23CDDC39'/%3E%3Cstop offset='1' stop-color='%234CAF50'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
-                display: block;
-                position: absolute;
-                top: 9px;
-                right: 16px;
-            }
-        }
-        &__noactivecall{
-            &:after{
-                background: $color-dark;
-            }
-            &:before{
-                content: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1.5' cy='1.5' r='1.5' fill='%23787A94'/%3E%3Ccircle cx='6.5' cy='6.5' r='1.5' fill='%23787A94'/%3E%3Ccircle cx='6.5' cy='1.5' r='1.5' fill='%23787A94'/%3E%3C/svg%3E%0A");
-                display: block;
-                position: absolute;
-                top: 9px;
-                right: 16px;
-            }
-        }
+        &:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -5px;
+            width: calc(100% + 10px);
+            height: 100%;
+            background: transparent;
+            border-radius: 6px;
+            opacity: 0.1;
+            transition: all 0.3;
 
+        }
     }
-
-    .iwda-footer{
-        position: absolute;
-        bottom: 15px; 
-        padding: 0 10px;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        z-index: 9;
-    }
-    .iwda-status{
-        font-size: 8px;
-        line-height: 15px;
-        color: $text-color2;
-        border-radius: 6px;
-        width: 80px;
-        transition: color 0.1s;
+    &__backspace{
+        width: 22px;
+        height: 18px;
+        fill: $text-color3;
+        padding: 0;
+        transition: all 0.3s;
+        cursor: pointer;
+        z-index: 2;
+        &:focus{
+            outline: none;
+            fill: $text-color2;
+        }
         @media(hover){
             &:hover{
-                color: $text-color;
+                fill: $text-color2;
             }
         }
-        &__open{
-            background: $text-color3;
-            color: $text-color2;
-            padding: 7px 0 5px 7px;
-            .iwda-status__name{
-                font-size: 10px;
-                color: $text-color;
-                cursor: default;
-                .iwda-status__point,
-                .iwda-status__icon{
-                    display: none;
-                }
-            }
-        }
-        &__name{
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        &__item{
-            margin: 4px 0;
-            cursor: pointer;
-            &_active{
-                color: $text-color;
-            }
-        }
-        &__icon{
-            width: 6px;
-            height: 3px;
-            margin-left: 3px;
-        }
-        &__point{
-            width: 3px;
-            height: 3px;
-            border-radius: 50%;
-            margin-right: 5px;
-            display: inline-block;
-            vertical-align: middle;
-            &_on{
-                background: $color-up;
-            }
-            &_off{
-                background: $color-down;
-            }
-            &_else{
-                background: $text-color2;
-            }
-            
-        }
-        &__list{
-            display: none;
+        .iwda-icon{
+            width: 100%;
+            height: 100%;
         }
     }
-    .iwda-copyright{
-        color: $text-color3;
-        font-size: 8px;
-        line-height: 15px;
-        transition: color 0.3s;
-        @media(hover){
-            &:hover{
-                color: $text-color2;
-            }        
-        }
+}
+.iwda-btn{
+    font-size: 12px;
+    color: $text-color;
+    background: $color-up;
+    border-radius:  20px;
+    min-width: 140px;
+    height: 38px;
+    padding: 11px 20px;
+    &:focus{
+        outline: none;
     }
-    .iwda-activecall{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        z-index: 3;
+}
+.iwda-callbtn{
+    width: 50px;
+    height: 50px;
+    margin: 15px 7px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    &:after{
+        content: '';
         width: 100%;
         height: 100%;
+        position: absolute;
         top: 0;
         left: 0;
-        background: $bg;
-        padding: 0 10px;
-        &__descr{
-            color: $text-color3;
-            font-size: 12px;
-            line-height: 18px;
-            margin-bottom: 8px;
-        }
-        &__number{
-            width: 100%;
-            text-align: center;
-            font-size: 18px;
-            line-height: 18px;
-            color: $text-color;
-        }
-        &__loader{
-            width: 32px;
-            height: 15px;
-            margin-bottom: 7px;
-        }
-        &__buttons{
-            display: flex;
-            justify-content: center;
-        }
-        &__time{
-            font-size: 12px;
-            line-height: 18px;
-            color: $text-color2;
-            margin-top: 5px;
-            margin-bottom: 35px;
+        border-radius: 50%;;
+        z-index: -1;
+        transform: rotate(0deg);
+        transition: all 0.5s;
+    }
+    &:focus{
+        outline: none;
+        &:after{
+            transform: rotate(45deg);
         }
     }
-    
-    .icon-iwda-call-loader{
+    @media(hover){
+        &:hover{
+            &:after{
+                transform: rotate(45deg);
+            }
+        }   
+    }
+    &__wrap{
         width: 100%;
-        height: 100%;
-        fill: $text-color3;
+        display: flex;
+        justify-content: center;
     }
-    .iwda-call-loader__path{
-        animation: intouch-web-dialer-app-loader 2.5s infinite linear;
-        &:first-child{
-            animation-delay: 1s;
+    &__icon{
+        fill: $text-color;
+        width: 24px;
+        height: 24px;
+        transition: all 0.3s;
+    }
+    &__up:after{
+        background: $color-up;
+    }
+    &__down{
+        &:after{
+            background: $color-down;
         }
-        &:nth-child(2){
-            animation-delay: 0.5s;
+        .iwda-callbtn__icon{
+            transform: rotate(135deg);
         }
-        &:nth-child(3){
-            animation-delay: 0s;
+
+    }
+    &__wait:after{
+        background: $color-wait;
+    }
+    &__danger{
+        &:after{
+            background: $color-down;
         }
     }
-    .iwda-activenumber{
+    &__noactive{
+        &:after{
+            background: $text-color3;
+        }
+    }
+    &__disable{
+        &:after{
+            background: #2F2B44;  
+        }
+        .iwda-callbtn__icon{
+            fill: $text-color3;
+        }
+    }
+    &__title{
         position: absolute;
-        top: 18px;
+        bottom: -20px;
         left: 0;
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        &__text{
-            color: $text-color3;
+        text-align: center;
+        color: $text-color;
+        font-size: 10px;
+    }
+    &__out{
+        &:after{
+            background: $color-dark;
+        }
+        &:before{
+            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8' fill='none'%3E%3Ccircle cx='1.5' cy='1.5' r='1.5' fill='url(%23paint0_linear)'/%3E%3Ccircle cx='6.5' cy='6.5' r='1.5' fill='url(%23paint1_linear)'/%3E%3Ccircle cx='6.5' cy='1.5' r='1.5' fill='url(%23paint2_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='3' y1='3' x2='0' y2='0' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FF9800'/%3E%3Cstop offset='1' stop-color='%23D81B60'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear' x1='8' y1='8' x2='5' y2='5' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FF9800'/%3E%3Cstop offset='1' stop-color='%23D81B60'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint2_linear' x1='8' y1='3' x2='5' y2='0' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FF9800'/%3E%3Cstop offset='1' stop-color='%23D81B60'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+            display: block;
+            position: absolute;
+            top: 9px;
+            right: 16px;
         }
     }
-    .iwda-note{
-        font-weight: 600;
-        font-size: 10px;
-        line-height: 15px;
+    &__in{
+        &:after{
+            background: $color-dark;
+        }
+        &:before{
+            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8' fill='none'%3E%3Ccircle cx='1.5' cy='1.5' r='1.5' fill='url(%23paint0_linear)'/%3E%3Ccircle cx='6.5' cy='6.5' r='1.5' fill='url(%23paint1_linear)'/%3E%3Ccircle cx='6.5' cy='1.5' r='1.5' fill='url(%23paint2_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='3' y1='3' x2='0' y2='0' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23CDDC39'/%3E%3Cstop offset='1' stop-color='%234CAF50'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear' x1='8' y1='8' x2='5' y2='5' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23CDDC39'/%3E%3Cstop offset='1' stop-color='%234CAF50'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint2_linear' x1='8' y1='3' x2='5' y2='0' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23CDDC39'/%3E%3Cstop offset='1' stop-color='%234CAF50'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+            display: block;
+            position: absolute;
+            top: 9px;
+            right: 16px;
+        }
+    }
+    &__noactivecall{
+        &:after{
+            background: $color-dark;
+        }
+        &:before{
+            content: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1.5' cy='1.5' r='1.5' fill='%23787A94'/%3E%3Ccircle cx='6.5' cy='6.5' r='1.5' fill='%23787A94'/%3E%3Ccircle cx='6.5' cy='1.5' r='1.5' fill='%23787A94'/%3E%3C/svg%3E%0A");
+            display: block;
+            position: absolute;
+            top: 9px;
+            right: 16px;
+        }
+    }
+
+}
+
+.iwda-footer{
+    bottom: 15px; 
+    padding: 6px 10px 7px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 9;
+    background: rgba(204, 206, 224, 0.1);
+}
+.iwda_version{
+    font-size: 10px;
+    color: $text-color3;
+    margin-left: auto;
+}
+.iwda-status{
+    font-size: 12px;
+    line-height: 15px;
+    color: $text-color2;
+    border-radius: 6px;
+    transition: background .3s 0.3s;
+    position: absolute;
+    bottom: 7px;
+    left: 10px;
+    &__open{
+        background: $text-color3;
+        color: $text-color2;
+        padding: 7px 7px 5px 7px;
+        
+        transition: background .3s;
+        .iwda-status__name{
+            font-size: 12px;
+            line-height: 1.5;
+            color: $text-color;
+            cursor: default;
+            .iwda-status__point,
+            .iwda-status__icon{
+                display: none;
+            }
+        }
+        .iwda-status__list{
+            height: 60px;
+        }
+    }
+    &__name{
+        cursor: pointer;
+        transition: all 0.3s;
+        font-size: 12px;
+        @media(hover){
+            &:hover{
+                color: $text-color;
+            }
+        }
+    }
+    &__item{
+        margin: 4px 0;
+        cursor: pointer;
+        &_active{
+            color: $text-color;
+        }
+    }
+    &__icon{
+        width: 6px;
+        height: 3px;
+        margin-left: 3px;
+    }
+    &__point{
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        margin-right: 5px;
+        display: inline-block;
+        vertical-align: middle;
+        &_on{
+            background: $color-up;
+        }
+        &_off{
+            background: $color-down;
+        }
+        &_else{
+            background: $text-color2;
+        }
+        
+    }
+    &__list{
+        height: 0px;
+        overflow: hidden;
+        transition: height 0.3s ease-out;
+    }
+}
+.iwda-copyright{
+    color: $text-color3;
+    font-size: 10px;
+    line-height: 15px;
+    transition: color 0.3s;
+    @media(hover){
+        &:hover{
+            color: $text-color2;
+        }        
+    }
+}
+.iwda-activecall{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    width: 100%;
+    height: calc(100% - 56px);
+    background: $bg;
+    padding: 0 10px;
+    position: relative;
+    &__descr{
+        color: $text-color3;
+        font-size: 12px;
+        line-height: 18px;
+        margin-bottom: 8px;
+    }
+    &__number{
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+        line-height: 18px;
+        color: $text-color;
+        &_inpad{
+            display: flex;
+            font-size: 14px;
+            color: $text-color3;
+            .iwda-activecall__time{
+                margin: 0 0 0 auto;
+            }
+        }
+    }
+    &__loader{
+        width: 32px;
+        height: 15px;
+        margin-bottom: 7px;
+    }
+    &__buttons{
+        display: flex;
+        justify-content: center;
+    }
+    &__time{
+        font-size: 12px;
+        line-height: 18px;
+        color: $text-color2;
+        margin-top: 5px;
+        margin-bottom: 35px;
+    }
+}
+
+.icon-iwda-call-loader{
+    width: 100%;
+    height: 100%;
+    fill: $text-color3;
+}
+.iwda-call-loader__path{
+    animation: intouch-web-dialer-app-loader 2.5s infinite linear;
+    &:first-child{
+        animation-delay: 1s;
+    }
+    &:nth-child(2){
+        animation-delay: 0.5s;
+    }
+    &:nth-child(3){
+        animation-delay: 0s;
+    }
+}
+.iwda-activenumber{
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__text{
         color: $text-color3;
     }
-    .iwda-iti__flag{
-        border-right: 2px;
-    }
-    .iwda-options{
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        margin-top: 10px;
-        &__item{
-            width: 50px;
-            text-align: center;
-            margin: 0 10px;
-            padding: 0;
-            &:focus{
-                outline: none;
+}
+.iwda-note{
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 15px;
+    color: $text-color3;
+}
+.iwda-iti__flag{
+    border-right: 2px;
+}
+.iwda-options{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+    &__item{
+        width: 50px;
+        text-align: center;
+        margin: 0 10px;
+        padding: 0;
+        &:focus{
+            outline: none;
+            .iwda-options__icon{
+                fill: $text-color2;
+            }
+            .iwda-options__text{
+                color: $text-color2;
+            }
+        }
+        @media(hover){
+            &:hover{
                 .iwda-options__icon{
                     fill: $text-color2;
                 }
@@ -687,85 +766,98 @@ $color-dark: linear-gradient(180deg, #2B2C48 0%, #3B3F61 100%);;
                     color: $text-color2;
                 }
             }
+        }
+        &_disable{
+            .iwda-options__icon{
+                fill: $text-color3;
+            }
+        }
+    }
+    &_incall{
+        margin-bottom: 25px;
+    }
+    &_inpad{
+        margin-bottom: 0;
+    }
+    &__pad{
+        &_active{
+            .iwda-options__icon{
+                fill:  #CDDC39;
+            }
+            .iwda-options__text{
+                color: #CDDC39;
+            }
             @media(hover){
                 &:hover{
                     .iwda-options__icon{
-                        fill: $text-color2;
+                        fill:  #CDDC39;
                     }
                     .iwda-options__text{
-                        color: $text-color2;
+                        color: #CDDC39;
                     }
-                }
+                }                
             }
-            &_disable{
-                .iwda-options__icon{
-                    fill: $text-color3;
-                }
-            }
-        }
-        &_incall{
-            margin-bottom: 25px;
-        }
-        &__icon{
-            width: 24px;
-            height: 24px;
-            fill: $text-color;
-            margin: 0 auto 5px;
-            transition: all 0.3s;
-            .iwda-icon{
-                width: 100%;
-                height: 100%;
-            }
-        }
-        &__text{
-            font-size: 10px;
-            line-height: 15px;
-            color: $text-color3;
         }
     }
-    .iwda-notification{
+    &__icon{
+        width: 24px;
+        height: 24px;
+        fill: $text-color;
+        margin: 0 auto 5px;
+        transition: all 0.3s;
+        .iwda-icon{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__text{
+        font-size: 10px;
+        line-height: 15px;
+        color: $text-color3;
+    }
+}
+.iwda-notification{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 15;
+    width: calc(100% - 10px);
+    padding: 5px 30px 5px 10px;
+    &__error{
+        background: #D81B60;
+        border-radius: 5px;
+        color: $text-color;
+    }
+    &__title{
+        font-size: 10px;
+        line-height: 15px;
+    }
+    &__text{
+        font-size: 8px;
+        line-height: 15px;
+        opacity: 0.7;
+    }
+    &__close {
         position: absolute;
         top: 5px;
-        left: 5px;
-        z-index: 15;
-        width: calc(100% - 10px);
-        padding: 5px 30px 5px 10px;
-        &__error{
-            background: #D81B60;
-            border-radius: 5px;
-            color: $text-color;
+        right: 5px;
+        width: 24px;
+        height: 24px;
+        padding: 5px;
+        z-index: 5;
+        &:focus{
+            outline: none;
+            .iwda-close__icon{
+                stroke: $text-color;
+            }
         }
-        &__title{
-            font-size: 10px;
-            line-height: 15px;
-        }
-        &__text{
-            font-size: 8px;
-            line-height: 15px;
-            opacity: 0.7;
-        }
-        &__close {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            width: 24px;
-            height: 24px;
-            padding: 5px;
-            z-index: 5;
-            &:focus{
-                outline: none;
+        @media(hover){
+            &:hover{
                 .iwda-close__icon{
-                    stroke: $text-color;
-                }
-            }
-            @media(hover){
-                &:hover{
-                    .iwda-close__icon{
-                        stroke: $text-color2;
-                    }   
+                    stroke: $text-color2;
                 }   
-            }
+            }   
         }
-
     }
+
 }

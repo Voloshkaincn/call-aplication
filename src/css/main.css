@@ -8,69 +8,69 @@
   -ms-overflow-style: scrollbar;
 }
 
-#intouch-web-dialer-app *,
-#intouch-web-dialer-app *::before,
-#intouch-web-dialer-app *::after {
+*,
+*::before,
+*::after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
 }
 
-#intouch-web-dialer-app a {
+a {
   background-color: transparent;
   color: unset;
   text-decoration: none;
   cursor: pointer;
 }
 
-#intouch-web-dialer-app img {
+img {
   border: 0;
   height: auto;
   max-width: 100%;
 }
 
-#intouch-web-dialer-app button,
-#intouch-web-dialer-app input,
-#intouch-web-dialer-app optgroup,
-#intouch-web-dialer-app select,
-#intouch-web-dialer-app textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   color: inherit;
   font: inherit;
   margin: 0;
 }
 
-#intouch-web-dialer-app button {
+button {
   overflow: visible;
   background: transparent;
   border: none;
 }
 
-#intouch-web-dialer-app button {
+button {
   -webkit-appearance: button;
   cursor: pointer;
 }
 
-#intouch-web-dialer-app button[disabled] {
+button[disabled] {
   cursor: default;
 }
 
-#intouch-web-dialer-app ::-webkit-scrollbar {
+::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 3px;
   height: 3px;
 }
 
-#intouch-web-dialer-app ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background: rgba(120, 122, 148, 0.23);
   -webkit-border-radius: 1px;
           border-radius: 1px;
   width: 3px;
 }
 
-#intouch-web-dialer-app ::-webkit-scrollbar-thumb:window-inactive {
+::-webkit-scrollbar-thumb:window-inactive {
   background: #787A94;
 }
 
-#intouch-web-dialer-app ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   cursor: pointer;
   -webkit-border-radius: 0;
           border-radius: 0;
@@ -80,15 +80,15 @@
   transition: background 0.2s ease;
 }
 
-#intouch-web-dialer-app ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
   background: #787A94;
 }
 
-#intouch-web-dialer-app ::-moz-selection {
+::-moz-selection {
   background: transparent;
 }
 
-#intouch-web-dialer-app ::selection {
+::selection {
   background: transparent;
 }
 
@@ -133,15 +133,38 @@
 }
 
 /*===== components ========*/
-#intouch-web-dialer-app .iwda-hidden {
+.iwda-hidden {
   visibility: hidden;
 }
 
-#intouch-web-dialer-app .iwda-mt-auto {
+.iwda-mt-auto {
   margin-top: auto;
 }
 
-#intouch-web-dialer-app .iwda-callapp {
+.iwda-mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.iwda-header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2px 5px 2px 10px;
+  background: rgba(204, 206, 224, 0.1);
+}
+
+.iwda-callapp {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   position: fixed;
@@ -161,10 +184,11 @@
   overflow: hidden;
 }
 
-#intouch-web-dialer-app .iwda-callapp__wrap {
+.iwda-callapp__wrap {
   width: 100%;
-  height: 100%;
-  padding: 20px 10px;
+  height: -webkit-calc(100% - 56px);
+  height: calc(100% - 56px);
+  padding: 0px 10px 20px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -178,7 +202,7 @@
           align-items: self-start;
 }
 
-#intouch-web-dialer-app .iwda-callapp__btn {
+.iwda-callapp__btn {
   width: 80px;
   height: 64px;
   position: fixed;
@@ -187,19 +211,20 @@
   margin: 0;
 }
 
-#intouch-web-dialer-app .iwda-callapp__btn .iwda-callbtn {
+.iwda-callapp__btn .iwda-callbtn {
   -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-#intouch-web-dialer-app .iwda-loader {
+.iwda-loader {
   margin: auto;
   text-align: center;
   position: absolute;
-  top: 0;
+  top: 32px;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: -webkit-calc(100% - 32px);
+  height: calc(100% - 32px);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -220,7 +245,7 @@
   z-index: 12;
 }
 
-#intouch-web-dialer-app .iwda-loader__spiner {
+.iwda-loader__spiner {
   width: 50px;
   height: 50px;
   margin: 0 auto 10px;
@@ -230,12 +255,12 @@
           animation: intouch-web-dialer-app-rotate 1.5s infinite linear;
 }
 
-#intouch-web-dialer-app .iwda-loader__spiner .iwda-icon {
+.iwda-loader__spiner .iwda-icon {
   width: 100%;
   height: 100%;
 }
 
-#intouch-web-dialer-app .iwda-loader__title {
+.iwda-loader__title {
   color: #ffffff;
   font-weight: 600;
   font-size: 14px;
@@ -243,18 +268,55 @@
   margin-bottom: 10px;
 }
 
-#intouch-web-dialer-app .iwda-loader__text {
+.iwda-loader__text {
   color: #787A94;
   font-size: 12px;
   line-height: 18px;
 }
 
-#intouch-web-dialer-app .iwda-select {
+.iwda-ready {
+  margin: auto;
+  text-align: center;
+  position: absolute;
+  top: 32px;
+  left: 0;
+  width: 100%;
+  height: -webkit-calc(100% - 32px);
+  height: calc(100% - 32px);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2B2C48), to(#3B3F61));
+  background: -webkit-linear-gradient(top, #2B2C48 0%, #3B3F61 100%);
+  background: -o-linear-gradient(top, #2B2C48 0%, #3B3F61 100%);
+  background: linear-gradient(180deg, #2B2C48 0%, #3B3F61 100%);
+  z-index: 11;
+}
+
+.iwda-ready__title {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  margin-bottom: 10px;
+}
+
+.iwda-select {
   width: 100%;
   position: relative;
 }
 
-#intouch-web-dialer-app .iwda-select__triger {
+.iwda-select__triger {
   color: #787A94;
   font-size: 14px;
   line-height: 24px;
@@ -271,19 +333,19 @@
   cursor: pointer;
 }
 
-#intouch-web-dialer-app .iwda-select__arrow {
+.iwda-select__arrow {
   margin-left: auto;
   width: 10px;
   height: 5px;
 }
 
-#intouch-web-dialer-app .iwda-select__text {
+.iwda-select__text {
   font-size: 14px;
   line-height: 24px;
   color: #CCCEE0;
 }
 
-#intouch-web-dialer-app .iwda-select__list {
+.iwda-select__list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -300,7 +362,7 @@
   left: 0;
 }
 
-#intouch-web-dialer-app .iwda-select__option {
+.iwda-select__option {
   padding: 13px 5px;
   -webkit-border-radius: 6px;
           border-radius: 6px;
@@ -319,53 +381,50 @@
 }
 
 @media (hover) {
-  #intouch-web-dialer-app .iwda-select__option:hover {
+  .iwda-select__option:hover {
     background: rgba(120, 122, 148, 0.23);
   }
 }
 
-#intouch-web-dialer-app .icon-iwda-arrow {
+.icon-iwda-arrow {
   stroke: #ffffff;
   fill: transparent;
 }
 
-#intouch-web-dialer-app .iwda-option__check:after {
+.iwda-option__check:after {
   display: block;
   content: url("data:image/svg+xml,%3Csvg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5L4.66667 9L12 1' stroke='url(%23paint0_linear)' stroke-linecap='round'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='12' y1='9' x2='4.38919' y2='-1.46486' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23CDDC39'/%3E%3Cstop offset='1' stop-color='%234CAF50'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
   margin-left: auto;
 }
 
-#intouch-web-dialer-app .iwda-close {
-  position: absolute;
-  top: 10px;
-  right: 5px;
+.iwda-close {
   width: 24px;
   height: 24px;
-  padding: 5px;
+  padding: 4px;
   z-index: 5;
 }
 
-#intouch-web-dialer-app .iwda-close:focus {
+.iwda-close:focus {
   outline: none;
 }
 
-#intouch-web-dialer-app .iwda-close:focus .close__icon {
+.iwda-close:focus .close__icon {
   stroke: #787A94;
 }
 
 @media (hover) {
-  #intouch-web-dialer-app .iwda-close:hover .close__icon {
+  .iwda-close:hover .close__icon {
     stroke: #CCCEE0;
   }
 }
 
-#intouch-web-dialer-app .iwda-close__icon {
+.iwda-close__icon {
   width: 100%;
   height: 100%;
   stroke: #CCCEE0;
 }
 
-#intouch-web-dialer-app .iwda-phones__list {
+.iwda-phones__list {
   height: 335px;
   overflow: auto;
   position: absolute;
@@ -379,22 +438,23 @@
   margin: 0 -5px;
 }
 
-#intouch-web-dialer-app .iwda-pad {
+.iwda-pad {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 15px 25px;
+  grid-gap: 10px 25px;
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
       -ms-flex-align: start;
           align-items: flex-start;
 }
 
-#intouch-web-dialer-app .iwda-pad__input {
+.iwda-pad__input {
   width: 100%;
   color: #787a94;
   text-align: center;
   height: 50px;
+  min-height: 32px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -407,11 +467,10 @@
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 25px;
   position: relative;
 }
 
-#intouch-web-dialer-app .iwda-pad__number {
+.iwda-pad__number {
   font-size: 18px;
   line-height: 18px;
   color: #ffffff;
@@ -420,7 +479,7 @@
   transition: all 0.3s;
 }
 
-#intouch-web-dialer-app .iwda-pad__letter {
+.iwda-pad__letter {
   font-size: 10px;
   line-height: 15px;
   color: #787A94;
@@ -429,23 +488,23 @@
   transition: all 0.3s;
 }
 
-#intouch-web-dialer-app .iwda-pad__item:focus {
+.iwda-pad__item:focus {
   outline: none;
 }
 
-#intouch-web-dialer-app .iwda-pad__item:focus .iwda-pad__number,
-#intouch-web-dialer-app .iwda-pad__item:focus .iwda-pad__letter {
+.iwda-pad__item:focus .iwda-pad__number,
+.iwda-pad__item:focus .iwda-pad__letter {
   color: #CCCEE0;
 }
 
 @media (hover) {
-  #intouch-web-dialer-app .iwda-pad__item:hover .iwda-pad__number,
-  #intouch-web-dialer-app .iwda-pad__item:hover .iwda-pad__letter {
+  .iwda-pad__item:hover .iwda-pad__number,
+  .iwda-pad__item:hover .iwda-pad__letter {
     color: #CCCEE0;
   }
 }
 
-#intouch-web-dialer-app .iwda-input {
+.iwda-input {
   background: transparent;
   color: #ffffff;
   border: none;
@@ -454,11 +513,11 @@
   width: 100%;
 }
 
-#intouch-web-dialer-app .iwda-input:focus {
+.iwda-input:focus {
   outline: none;
 }
 
-#intouch-web-dialer-app .iwda-input__wrap {
+.iwda-input__wrap {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -471,12 +530,12 @@
 }
 
 @media (hover) {
-  #intouch-web-dialer-app .iwda-input__wrap:hover:after {
+  .iwda-input__wrap:hover:after {
     background: #787A94;
   }
 }
 
-#intouch-web-dialer-app .iwda-input__wrap:after {
+.iwda-input__wrap:after {
   content: '';
   position: absolute;
   top: 0;
@@ -493,7 +552,7 @@
   transition: all 0.3;
 }
 
-#intouch-web-dialer-app .iwda-input__backspace {
+.iwda-input__backspace {
   width: 22px;
   height: 18px;
   fill: #787A94;
@@ -501,29 +560,46 @@
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
+  cursor: pointer;
+  z-index: 2;
 }
 
-#intouch-web-dialer-app .iwda-input__backspace:focus {
+.iwda-input__backspace:focus {
   outline: none;
   fill: #CCCEE0;
 }
 
 @media (hover) {
-  #intouch-web-dialer-app .iwda-input__backspace:hover {
+  .iwda-input__backspace:hover {
     fill: #CCCEE0;
   }
 }
 
-#intouch-web-dialer-app .iwda-input__backspace .iwda-icon {
+.iwda-input__backspace .iwda-icon {
   width: 100%;
   height: 100%;
 }
 
-#intouch-web-dialer-app .iwda-callbtn {
+.iwda-btn {
+  font-size: 12px;
+  color: #ffffff;
+  background: -webkit-linear-gradient(135deg, #CDDC39 0%, #4CAF50 100%);
+  background: -o-linear-gradient(135deg, #CDDC39 0%, #4CAF50 100%);
+  background: linear-gradient(315deg, #CDDC39 0%, #4CAF50 100%);
+  -webkit-border-radius: 20px;
+          border-radius: 20px;
+  min-width: 140px;
+  height: 38px;
+  padding: 11px 20px;
+}
+
+.iwda-btn:focus {
+  outline: none;
+}
+
+.iwda-callbtn {
   width: 50px;
   height: 50px;
-  -webkit-border-radius: 50%;
-          border-radius: 50%;
   margin: 15px 7px;
   padding: 0;
   display: -webkit-box;
@@ -539,16 +615,17 @@
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
-  overflow: hidden;
 }
 
-#intouch-web-dialer-app .iwda-callbtn:after {
+.iwda-callbtn:after {
   content: '';
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
   z-index: -1;
   -webkit-transform: rotate(0deg);
       -ms-transform: rotate(0deg);
@@ -558,25 +635,25 @@
   transition: all 0.5s;
 }
 
-#intouch-web-dialer-app .iwda-callbtn:focus {
+.iwda-callbtn:focus {
   outline: none;
 }
 
-#intouch-web-dialer-app .iwda-callbtn:focus:after {
+.iwda-callbtn:focus:after {
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
 @media (hover) {
-  #intouch-web-dialer-app .iwda-callbtn:hover:after {
+  .iwda-callbtn:hover:after {
     -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
   }
 }
 
-#intouch-web-dialer-app .iwda-callbtn__wrap {
+.iwda-callbtn__wrap {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -588,7 +665,7 @@
           justify-content: center;
 }
 
-#intouch-web-dialer-app .iwda-callbtn__icon {
+.iwda-callbtn__icon {
   fill: #ffffff;
   width: 24px;
   height: 24px;
@@ -597,56 +674,66 @@
   transition: all 0.3s;
 }
 
-#intouch-web-dialer-app .iwda-callbtn__up:after {
+.iwda-callbtn__up:after {
   background: -webkit-linear-gradient(135deg, #CDDC39 0%, #4CAF50 100%);
   background: -o-linear-gradient(135deg, #CDDC39 0%, #4CAF50 100%);
   background: linear-gradient(315deg, #CDDC39 0%, #4CAF50 100%);
 }
 
-#intouch-web-dialer-app .iwda-callbtn__down:after {
+.iwda-callbtn__down:after {
   background: -webkit-linear-gradient(135deg, #FF9800 0%, #D81B60 100%);
   background: -o-linear-gradient(135deg, #FF9800 0%, #D81B60 100%);
   background: linear-gradient(315deg, #FF9800 0%, #D81B60 100%);
 }
 
-#intouch-web-dialer-app .iwda-callbtn__down .iwda-callbtn__icon {
+.iwda-callbtn__down .iwda-callbtn__icon {
   -webkit-transform: rotate(135deg);
       -ms-transform: rotate(135deg);
           transform: rotate(135deg);
 }
 
-#intouch-web-dialer-app .iwda-callbtn__wait:after {
+.iwda-callbtn__wait:after {
   background: -webkit-linear-gradient(135deg, #FDD835 0%, #FF9800 100%);
   background: -o-linear-gradient(135deg, #FDD835 0%, #FF9800 100%);
   background: linear-gradient(315deg, #FDD835 0%, #FF9800 100%);
 }
 
-#intouch-web-dialer-app .iwda-callbtn__danger:after {
+.iwda-callbtn__danger:after {
   background: -webkit-linear-gradient(135deg, #FF9800 0%, #D81B60 100%);
   background: -o-linear-gradient(135deg, #FF9800 0%, #D81B60 100%);
   background: linear-gradient(315deg, #FF9800 0%, #D81B60 100%);
 }
 
-#intouch-web-dialer-app .iwda-callbtn__noactive:after {
+.iwda-callbtn__noactive:after {
   background: #787A94;
 }
 
-#intouch-web-dialer-app .iwda-callbtn__disable:after {
+.iwda-callbtn__disable:after {
   background: #2F2B44;
 }
 
-#intouch-web-dialer-app .iwda-callbtn__disable .iwda-callbtn__icon {
+.iwda-callbtn__disable .iwda-callbtn__icon {
   fill: #787A94;
 }
 
-#intouch-web-dialer-app .iwda-callbtn__out:after {
+.iwda-callbtn__title {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-size: 10px;
+}
+
+.iwda-callbtn__out:after {
   background: -webkit-gradient(linear, left top, left bottom, from(#2B2C48), to(#3B3F61));
   background: -webkit-linear-gradient(top, #2B2C48 0%, #3B3F61 100%);
   background: -o-linear-gradient(top, #2B2C48 0%, #3B3F61 100%);
   background: linear-gradient(180deg, #2B2C48 0%, #3B3F61 100%);
 }
 
-#intouch-web-dialer-app .iwda-callbtn__out:before {
+.iwda-callbtn__out:before {
   content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8' fill='none'%3E%3Ccircle cx='1.5' cy='1.5' r='1.5' fill='url(%23paint0_linear)'/%3E%3Ccircle cx='6.5' cy='6.5' r='1.5' fill='url(%23paint1_linear)'/%3E%3Ccircle cx='6.5' cy='1.5' r='1.5' fill='url(%23paint2_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='3' y1='3' x2='0' y2='0' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FF9800'/%3E%3Cstop offset='1' stop-color='%23D81B60'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear' x1='8' y1='8' x2='5' y2='5' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FF9800'/%3E%3Cstop offset='1' stop-color='%23D81B60'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint2_linear' x1='8' y1='3' x2='5' y2='0' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FF9800'/%3E%3Cstop offset='1' stop-color='%23D81B60'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
   display: block;
   position: absolute;
@@ -654,14 +741,14 @@
   right: 16px;
 }
 
-#intouch-web-dialer-app .iwda-callbtn__in:after {
+.iwda-callbtn__in:after {
   background: -webkit-gradient(linear, left top, left bottom, from(#2B2C48), to(#3B3F61));
   background: -webkit-linear-gradient(top, #2B2C48 0%, #3B3F61 100%);
   background: -o-linear-gradient(top, #2B2C48 0%, #3B3F61 100%);
   background: linear-gradient(180deg, #2B2C48 0%, #3B3F61 100%);
 }
 
-#intouch-web-dialer-app .iwda-callbtn__in:before {
+.iwda-callbtn__in:before {
   content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8' fill='none'%3E%3Ccircle cx='1.5' cy='1.5' r='1.5' fill='url(%23paint0_linear)'/%3E%3Ccircle cx='6.5' cy='6.5' r='1.5' fill='url(%23paint1_linear)'/%3E%3Ccircle cx='6.5' cy='1.5' r='1.5' fill='url(%23paint2_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='3' y1='3' x2='0' y2='0' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23CDDC39'/%3E%3Cstop offset='1' stop-color='%234CAF50'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear' x1='8' y1='8' x2='5' y2='5' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23CDDC39'/%3E%3Cstop offset='1' stop-color='%234CAF50'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint2_linear' x1='8' y1='3' x2='5' y2='0' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23CDDC39'/%3E%3Cstop offset='1' stop-color='%234CAF50'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
   display: block;
   position: absolute;
@@ -669,14 +756,14 @@
   right: 16px;
 }
 
-#intouch-web-dialer-app .iwda-callbtn__noactivecall:after {
+.iwda-callbtn__noactivecall:after {
   background: -webkit-gradient(linear, left top, left bottom, from(#2B2C48), to(#3B3F61));
   background: -webkit-linear-gradient(top, #2B2C48 0%, #3B3F61 100%);
   background: -o-linear-gradient(top, #2B2C48 0%, #3B3F61 100%);
   background: linear-gradient(180deg, #2B2C48 0%, #3B3F61 100%);
 }
 
-#intouch-web-dialer-app .iwda-callbtn__noactivecall:before {
+.iwda-callbtn__noactivecall:before {
   content: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1.5' cy='1.5' r='1.5' fill='%23787A94'/%3E%3Ccircle cx='6.5' cy='6.5' r='1.5' fill='%23787A94'/%3E%3Ccircle cx='6.5' cy='1.5' r='1.5' fill='%23787A94'/%3E%3C/svg%3E%0A");
   display: block;
   position: absolute;
@@ -684,10 +771,9 @@
   right: 16px;
 }
 
-#intouch-web-dialer-app .iwda-footer {
-  position: absolute;
+.iwda-footer {
   bottom: 15px;
-  padding: 0 10px;
+  padding: 6px 10px 7px;
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -702,66 +788,84 @@
       -ms-flex-align: end;
           align-items: flex-end;
   z-index: 9;
+  background: rgba(204, 206, 224, 0.1);
 }
 
-#intouch-web-dialer-app .iwda-status {
-  font-size: 8px;
+.iwda_version {
+  font-size: 10px;
+  color: #787A94;
+  margin-left: auto;
+}
+
+.iwda-status {
+  font-size: 12px;
   line-height: 15px;
   color: #CCCEE0;
   -webkit-border-radius: 6px;
           border-radius: 6px;
-  width: 80px;
-  -webkit-transition: color 0.1s;
-  -o-transition: color 0.1s;
-  transition: color 0.1s;
+  -webkit-transition: background .3s 0.3s;
+  -o-transition: background .3s 0.3s;
+  transition: background .3s 0.3s;
+  position: absolute;
+  bottom: 7px;
+  left: 10px;
 }
 
-@media (hover) {
-  #intouch-web-dialer-app .iwda-status:hover {
-    color: #ffffff;
-  }
-}
-
-#intouch-web-dialer-app .iwda-status__open {
+.iwda-status__open {
   background: #787A94;
   color: #CCCEE0;
-  padding: 7px 0 5px 7px;
+  padding: 7px 7px 5px 7px;
+  -webkit-transition: background .3s;
+  -o-transition: background .3s;
+  transition: background .3s;
 }
 
-#intouch-web-dialer-app .iwda-status__open .iwda-status__name {
-  font-size: 10px;
+.iwda-status__open .iwda-status__name {
+  font-size: 12px;
+  line-height: 1.5;
   color: #ffffff;
   cursor: default;
 }
 
-#intouch-web-dialer-app .iwda-status__open .iwda-status__name .iwda-status__point,
-#intouch-web-dialer-app .iwda-status__open .iwda-status__name .iwda-status__icon {
+.iwda-status__open .iwda-status__name .iwda-status__point,
+.iwda-status__open .iwda-status__name .iwda-status__icon {
   display: none;
 }
 
-#intouch-web-dialer-app .iwda-status__name {
+.iwda-status__open .iwda-status__list {
+  height: 60px;
+}
+
+.iwda-status__name {
   cursor: pointer;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
+  font-size: 12px;
 }
 
-#intouch-web-dialer-app .iwda-status__item {
+@media (hover) {
+  .iwda-status__name:hover {
+    color: #ffffff;
+  }
+}
+
+.iwda-status__item {
   margin: 4px 0;
   cursor: pointer;
 }
 
-#intouch-web-dialer-app .iwda-status__item_active {
+.iwda-status__item_active {
   color: #ffffff;
 }
 
-#intouch-web-dialer-app .iwda-status__icon {
+.iwda-status__icon {
   width: 6px;
   height: 3px;
   margin-left: 3px;
 }
 
-#intouch-web-dialer-app .iwda-status__point {
+.iwda-status__point {
   width: 3px;
   height: 3px;
   -webkit-border-radius: 50%;
@@ -771,29 +875,33 @@
   vertical-align: middle;
 }
 
-#intouch-web-dialer-app .iwda-status__point_on {
+.iwda-status__point_on {
   background: -webkit-linear-gradient(135deg, #CDDC39 0%, #4CAF50 100%);
   background: -o-linear-gradient(135deg, #CDDC39 0%, #4CAF50 100%);
   background: linear-gradient(315deg, #CDDC39 0%, #4CAF50 100%);
 }
 
-#intouch-web-dialer-app .iwda-status__point_off {
+.iwda-status__point_off {
   background: -webkit-linear-gradient(135deg, #FF9800 0%, #D81B60 100%);
   background: -o-linear-gradient(135deg, #FF9800 0%, #D81B60 100%);
   background: linear-gradient(315deg, #FF9800 0%, #D81B60 100%);
 }
 
-#intouch-web-dialer-app .iwda-status__point_else {
+.iwda-status__point_else {
   background: #CCCEE0;
 }
 
-#intouch-web-dialer-app .iwda-status__list {
-  display: none;
+.iwda-status__list {
+  height: 0px;
+  overflow: hidden;
+  -webkit-transition: height 0.3s ease-out;
+  -o-transition: height 0.3s ease-out;
+  transition: height 0.3s ease-out;
 }
 
-#intouch-web-dialer-app .iwda-copyright {
+.iwda-copyright {
   color: #787A94;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 15px;
   -webkit-transition: color 0.3s;
   -o-transition: color 0.3s;
@@ -801,12 +909,12 @@
 }
 
 @media (hover) {
-  #intouch-web-dialer-app .iwda-copyright:hover {
+  .iwda-copyright:hover {
     color: #CCCEE0;
   }
 }
 
-#intouch-web-dialer-app .iwda-activecall {
+.iwda-activecall {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -824,27 +932,26 @@
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  position: absolute;
   z-index: 3;
   width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+  height: -webkit-calc(100% - 56px);
+  height: calc(100% - 56px);
   background: -webkit-gradient(linear, left top, left bottom, from(#2B2C48), to(#3B3F61));
   background: -webkit-linear-gradient(top, #2B2C48 0%, #3B3F61 100%);
   background: -o-linear-gradient(top, #2B2C48 0%, #3B3F61 100%);
   background: linear-gradient(180deg, #2B2C48 0%, #3B3F61 100%);
   padding: 0 10px;
+  position: relative;
 }
 
-#intouch-web-dialer-app .iwda-activecall__descr {
+.iwda-activecall__descr {
   color: #787A94;
   font-size: 12px;
   line-height: 18px;
   margin-bottom: 8px;
 }
 
-#intouch-web-dialer-app .iwda-activecall__number {
+.iwda-activecall__number {
   width: 100%;
   text-align: center;
   font-size: 18px;
@@ -852,13 +959,26 @@
   color: #ffffff;
 }
 
-#intouch-web-dialer-app .iwda-activecall__loader {
+.iwda-activecall__number_inpad {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+  color: #787A94;
+}
+
+.iwda-activecall__number_inpad .iwda-activecall__time {
+  margin: 0 0 0 auto;
+}
+
+.iwda-activecall__loader {
   width: 32px;
   height: 15px;
   margin-bottom: 7px;
 }
 
-#intouch-web-dialer-app .iwda-activecall__buttons {
+.iwda-activecall__buttons {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -869,7 +989,7 @@
           justify-content: center;
 }
 
-#intouch-web-dialer-app .iwda-activecall__time {
+.iwda-activecall__time {
   font-size: 12px;
   line-height: 18px;
   color: #CCCEE0;
@@ -877,35 +997,35 @@
   margin-bottom: 35px;
 }
 
-#intouch-web-dialer-app .icon-iwda-call-loader {
+.icon-iwda-call-loader {
   width: 100%;
   height: 100%;
   fill: #787A94;
 }
 
-#intouch-web-dialer-app .iwda-call-loader__path {
+.iwda-call-loader__path {
   -webkit-animation: intouch-web-dialer-app-loader 2.5s infinite linear;
           animation: intouch-web-dialer-app-loader 2.5s infinite linear;
 }
 
-#intouch-web-dialer-app .iwda-call-loader__path:first-child {
+.iwda-call-loader__path:first-child {
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
 }
 
-#intouch-web-dialer-app .iwda-call-loader__path:nth-child(2) {
+.iwda-call-loader__path:nth-child(2) {
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
 }
 
-#intouch-web-dialer-app .iwda-call-loader__path:nth-child(3) {
+.iwda-call-loader__path:nth-child(3) {
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
 }
 
-#intouch-web-dialer-app .iwda-activenumber {
+.iwda-activenumber {
   position: absolute;
-  top: 18px;
+  top: 5px;
   left: 0;
   width: 100%;
   display: -webkit-box;
@@ -923,22 +1043,22 @@
           align-items: center;
 }
 
-#intouch-web-dialer-app .iwda-activenumber__text {
+.iwda-activenumber__text {
   color: #787A94;
 }
 
-#intouch-web-dialer-app .iwda-note {
+.iwda-note {
   font-weight: 600;
   font-size: 10px;
   line-height: 15px;
   color: #787A94;
 }
 
-#intouch-web-dialer-app .iwda-iti__flag {
+.iwda-iti__flag {
   border-right: 2px;
 }
 
-#intouch-web-dialer-app .iwda-options {
+.iwda-options {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -951,43 +1071,64 @@
   margin-top: 10px;
 }
 
-#intouch-web-dialer-app .iwda-options__item {
+.iwda-options__item {
   width: 50px;
   text-align: center;
   margin: 0 10px;
   padding: 0;
 }
 
-#intouch-web-dialer-app .iwda-options__item:focus {
+.iwda-options__item:focus {
   outline: none;
 }
 
-#intouch-web-dialer-app .iwda-options__item:focus .iwda-options__icon {
+.iwda-options__item:focus .iwda-options__icon {
   fill: #CCCEE0;
 }
 
-#intouch-web-dialer-app .iwda-options__item:focus .iwda-options__text {
+.iwda-options__item:focus .iwda-options__text {
   color: #CCCEE0;
 }
 
 @media (hover) {
-  #intouch-web-dialer-app .iwda-options__item:hover .iwda-options__icon {
+  .iwda-options__item:hover .iwda-options__icon {
     fill: #CCCEE0;
   }
-  #intouch-web-dialer-app .iwda-options__item:hover .iwda-options__text {
+  .iwda-options__item:hover .iwda-options__text {
     color: #CCCEE0;
   }
 }
 
-#intouch-web-dialer-app .iwda-options__item_disable .iwda-options__icon {
+.iwda-options__item_disable .iwda-options__icon {
   fill: #787A94;
 }
 
-#intouch-web-dialer-app .iwda-options_incall {
+.iwda-options_incall {
   margin-bottom: 25px;
 }
 
-#intouch-web-dialer-app .iwda-options__icon {
+.iwda-options_inpad {
+  margin-bottom: 0;
+}
+
+.iwda-options__pad_active .iwda-options__icon {
+  fill: #CDDC39;
+}
+
+.iwda-options__pad_active .iwda-options__text {
+  color: #CDDC39;
+}
+
+@media (hover) {
+  .iwda-options__pad_active:hover .iwda-options__icon {
+    fill: #CDDC39;
+  }
+  .iwda-options__pad_active:hover .iwda-options__text {
+    color: #CDDC39;
+  }
+}
+
+.iwda-options__icon {
   width: 24px;
   height: 24px;
   fill: #ffffff;
@@ -997,18 +1138,18 @@
   transition: all 0.3s;
 }
 
-#intouch-web-dialer-app .iwda-options__icon .iwda-icon {
+.iwda-options__icon .iwda-icon {
   width: 100%;
   height: 100%;
 }
 
-#intouch-web-dialer-app .iwda-options__text {
+.iwda-options__text {
   font-size: 10px;
   line-height: 15px;
   color: #787A94;
 }
 
-#intouch-web-dialer-app .iwda-notification {
+.iwda-notification {
   position: absolute;
   top: 5px;
   left: 5px;
@@ -1018,25 +1159,25 @@
   padding: 5px 30px 5px 10px;
 }
 
-#intouch-web-dialer-app .iwda-notification__error {
+.iwda-notification__error {
   background: #D81B60;
   -webkit-border-radius: 5px;
           border-radius: 5px;
   color: #ffffff;
 }
 
-#intouch-web-dialer-app .iwda-notification__title {
+.iwda-notification__title {
   font-size: 10px;
   line-height: 15px;
 }
 
-#intouch-web-dialer-app .iwda-notification__text {
+.iwda-notification__text {
   font-size: 8px;
   line-height: 15px;
   opacity: 0.7;
 }
 
-#intouch-web-dialer-app .iwda-notification__close {
+.iwda-notification__close {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -1046,16 +1187,16 @@
   z-index: 5;
 }
 
-#intouch-web-dialer-app .iwda-notification__close:focus {
+.iwda-notification__close:focus {
   outline: none;
 }
 
-#intouch-web-dialer-app .iwda-notification__close:focus .iwda-close__icon {
+.iwda-notification__close:focus .iwda-close__icon {
   stroke: #ffffff;
 }
 
 @media (hover) {
-  #intouch-web-dialer-app .iwda-notification__close:hover .iwda-close__icon {
+  .iwda-notification__close:hover .iwda-close__icon {
     stroke: #CCCEE0;
   }
 }
