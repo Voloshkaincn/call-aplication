@@ -12,72 +12,37 @@ $color-dark: linear-gradient(180deg, #2B2C48 0%, #3B3F61 100%);;
 
 
 /*===== normolize ========*/
-    #intouch-web-dialer-app{
-        margin:0;
-        box-sizing: border-box; 
-      -ms-overflow-style: scrollbar;
+.iwda-callapp{
+    *,
+    *::before,
+    *::after {
+        box-sizing: inherit;
     }
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
-a {
-    background-color: transparent;
-    color: unset;
-    text-decoration: none;
-    cursor: pointer
-}
-img {
-    border: 0;
-    height: auto;
-    max-width: 100%;
-}
-button,
-input,
-optgroup,
-select,
-textarea {
-    color: inherit;
-    font: inherit;
-    margin: 0;
-}
-button {
-    overflow: visible;
-    background: transparent;
-    border: none;
-}
-button {
-    -webkit-appearance: button;
-    cursor: pointer;
-}
-button[disabled] {
-    cursor: default;
-}
-::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 3px;
-    height: 3px;
-}
-::-webkit-scrollbar-track {
-    background: rgba(120,122,148,.23);
-    border-radius: 1px;
-    width: 3px;
-}
-::-webkit-scrollbar-thumb:window-inactive {
-    background: $text-color3;
-}
-::-webkit-scrollbar-thumb {
-    cursor: pointer;
-    border-radius: 0;
-    background: $text-color3;
-    transition: background 0.2s ease;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: $text-color3;
-}
-::selection {
-    background: transparent;
+    ::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 3px;
+        height: 3px;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgba(120,122,148,.23);
+        border-radius: 1px;
+        width: 3px;
+    }
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background: $text-color3;
+    }
+    ::-webkit-scrollbar-thumb {
+        cursor: pointer;
+        border-radius: 0;
+        background: $text-color3;
+        transition: background 0.2s ease;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: $text-color3;
+    }
+    ::selection {
+        background: transparent;
+    }
 }
 /*===== end normolize ========*/
 
@@ -99,16 +64,6 @@ button[disabled] {
 }
 
 /*===== components ========*/
-.iwda-hidden{
-    visibility: hidden;
-}
-.iwda-mt-auto{
-    margin-top: auto;
-}
-.iwda-mx-auto{
-    margin-left: auto;
-    margin-right: auto;
-}
 .iwda-header{
     display: flex;
     justify-content: space-between;
@@ -130,6 +85,14 @@ button[disabled] {
     height: 408px;
     color: $text-color;
     overflow: hidden;
+    margin:0;
+    box-sizing: border-box; 
+    -ms-overflow-style: scrollbar;
+    *{
+        margin:0;
+        box-sizing: border-box; 
+        -ms-overflow-style: scrollbar;
+    }
     &__wrap{
         width: 100%;
         height: calc(100% - 56px); 
@@ -277,16 +240,27 @@ button[disabled] {
     height: 24px;
     padding: 4px;
     z-index: 5;
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    overflow: visible;
+    background: transparent;
+    border: none;
+    -webkit-appearance: button;
+    cursor: pointer;
+    &[disabled] {
+        cursor: default;
+    }
     &:focus{
         outline: none;
-        .close__icon{
-            stroke: $text-color3;
+        .iwda-close__icon{
+            stroke: $text-color;
         }
     }
     @media(hover){
         &:hover{
-            .close__icon{
-                stroke: $text-color2;
+            .iwda-close__icon{
+                stroke: $text-color;
             }   
         }   
     }
@@ -323,6 +297,7 @@ button[disabled] {
         justify-content: center;
         align-items: center;
         position: relative;
+        z-index: 2;
     }
     &__number{
         font-size: 18px;
@@ -337,6 +312,17 @@ button[disabled] {
         transition: all 0.3s;
     }
     &__item{
+        color: inherit;
+        font: inherit;
+        margin: 0;
+        overflow: visible;
+        background: transparent;
+        border: none;
+        -webkit-appearance: button;
+        cursor: pointer;
+        &[disabled] {
+            cursor: default;
+        }
         &:focus{
             outline: none;
             .iwda-pad__number,
@@ -359,9 +345,11 @@ button[disabled] {
     background: transparent;
     color: $text-color;
     border: none;
+    font-family: inherit;
     font-size: 18px;
     line-height: 18px;
     width: 100%;
+    z-index: 2;
     &:focus{
         outline: none;
     }
@@ -396,6 +384,17 @@ button[disabled] {
         transition: all 0.3s;
         cursor: pointer;
         z-index: 2;
+        color: inherit;
+        font: inherit;
+        margin: 0;
+        overflow: visible;
+        background: transparent;
+        border: none;
+        -webkit-appearance: button;
+        cursor: pointer;
+        &[disabled] {
+            cursor: default;
+        }
         &:focus{
             outline: none;
             fill: $text-color2;
@@ -414,35 +413,29 @@ button[disabled] {
 .iwda-btn{
     font-size: 12px;
     color: $text-color;
-    background: $color-up;
+    position: relative;
+    background: transparent;
     border-radius:  20px;
     min-width: 140px;
     height: 38px;
     padding: 11px 20px;
-    &:focus{
-        outline: none;
-    }
-}
-.iwda-callbtn{
-    width: 50px;
-    height: 50px;
-    margin: 15px 7px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    font: inherit;
+    overflow: hidden;
+    border: none;
+    -webkit-appearance: button;
+    cursor: pointer;
     &:after{
         content: '';
         width: 100%;
-        height: 100%;
+        padding-top: 100%;
+        margin-top: calc(-50% + 15px);
         position: absolute;
         top: 0;
         left: 0;
-        border-radius: 50%;;
         z-index: -1;
         transform: rotate(0deg);
         transition: all 0.5s;
+        background: $color-up;
     }
     &:focus{
         outline: none;
@@ -456,6 +449,54 @@ button[disabled] {
                 transform: rotate(45deg);
             }
         }   
+    }
+    &[disabled] {
+        cursor: default;
+    }
+}
+.iwda-callbtn{
+    width: 50px;
+    height: 50px;
+    margin: 15px 7px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    position: relative;
+    font: inherit;
+    overflow: visible;
+    border: none;
+    -webkit-appearance: button;
+    cursor: pointer;
+    border-radius: 50%;
+    &:after{
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transform: rotate(0deg);
+        transition: all 0.5s;
+        border-radius: 50%;
+    }
+    &:focus{
+        outline: none;
+        &:after{
+            transform: rotate(45deg);
+        }
+    }
+    @media(hover){
+        &:hover{
+            &:after{
+                transform: rotate(45deg);
+            }
+        }   
+    }
+    &[disabled] {
+        cursor: default;
     }
     &__wrap{
         width: 100%;
@@ -556,7 +597,7 @@ button[disabled] {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    z-index: 9;
+    z-index: 5;
     background: rgba(204, 206, 224, 0.1);
 }
 .iwda_version{
@@ -573,6 +614,7 @@ button[disabled] {
     position: absolute;
     bottom: 7px;
     left: 10px;
+    z-index: 9;
     &__open{
         background: $text-color3;
         color: $text-color2;
@@ -616,12 +658,13 @@ button[disabled] {
         margin-left: 3px;
     }
     &__point{
-        width: 3px;
-        height: 3px;
+        width: 6px;
+        height: 6px;
         border-radius: 50%;
         margin-right: 5px;
         display: inline-block;
-        vertical-align: middle;
+        vertical-align: bottom;
+        margin-bottom: 4px;
         &_on{
             background: $color-up;
         }
@@ -644,6 +687,10 @@ button[disabled] {
     font-size: 10px;
     line-height: 15px;
     transition: color 0.3s;
+    background-color: transparent;
+    color: unset;
+    text-decoration: none;
+    cursor: pointer;
     @media(hover){
         &:hover{
             color: $text-color2;
@@ -659,7 +706,7 @@ button[disabled] {
     width: 100%;
     height: calc(100% - 56px);
     background: $bg;
-    padding: 0 10px;
+    padding: 0 10px 5px;
     position: relative;
     &__descr{
         color: $text-color3;
@@ -748,6 +795,17 @@ button[disabled] {
         text-align: center;
         margin: 0 10px;
         padding: 0;
+        color: inherit;
+        font: inherit;
+        margin: 0;
+        overflow: visible;
+        background: transparent;
+        border: none;
+        -webkit-appearance: button;
+        cursor: pointer;
+        &[disabled] {
+            cursor: default;
+        }
         &:focus{
             outline: none;
             .iwda-options__icon{
@@ -777,7 +835,7 @@ button[disabled] {
         margin-bottom: 25px;
     }
     &_inpad{
-        margin-bottom: 0;
+        margin-bottom: -5px;
     }
     &__pad{
         &_active{
@@ -829,11 +887,11 @@ button[disabled] {
         color: $text-color;
     }
     &__title{
-        font-size: 10px;
-        line-height: 15px;
+        font-size: 12px;
+        line-height: 18px;
     }
     &__text{
-        font-size: 8px;
+        font-size: 10px;
         line-height: 15px;
         opacity: 0.7;
     }
@@ -845,6 +903,17 @@ button[disabled] {
         height: 24px;
         padding: 5px;
         z-index: 5;
+        color: inherit;
+        font: inherit;
+        margin: 0;
+        overflow: visible;
+        background: transparent;
+        border: none;
+        -webkit-appearance: button;
+        cursor: pointer;
+        &[disabled] {
+            cursor: default;
+        }
         &:focus{
             outline: none;
             .iwda-close__icon{
@@ -854,10 +923,22 @@ button[disabled] {
         @media(hover){
             &:hover{
                 .iwda-close__icon{
-                    stroke: $text-color2;
+                    stroke: $text-color;
                 }   
             }   
         }
     }
+}
 
+/*==== modification styles ====*/
+
+.iwda-hidden{
+    visibility: hidden;
+}
+.iwda-mt-auto{
+    margin-top: auto;
+}
+.iwda-mx-auto{
+    margin-left: auto;
+    margin-right: auto;
 }

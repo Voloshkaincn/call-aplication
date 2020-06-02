@@ -5,13 +5,13 @@ $(document).ready(function () {
 
 	setTimeout(function () { $('.iwda-loader').hide(); }, 1500);
 
-	$('#intouch-web-dialer-app button').on('click', function () { $(this).blur() });// delete focus
+	$('.iwda-callapp button').on('click', function () { $(this).blur() });// delete focus
 
-	$('#intouch-web-dialer-app .iwda-select__triger').on('click', function () {
+	$('.iwda-callapp .iwda-select__triger').on('click', function () {
 		$(this).parents('.iwda-select').find('.iwda-select__list').slideToggle();
-		$('#intouch-web-dialer-app .iwda-select__option').on('click', function () {
+		$('.iwda-callapp .iwda-select__option').on('click', function () {
 			var value = $(this).html();
-			$('#intouch-web-dialer-app .iwda-select__value').html(value);
+			$('.iwda-callapp .iwda-select__value').html(value);
 			$(this).parents('.iwda-select').find('.iwda-select__list').slideUp();
 		})
 	});
